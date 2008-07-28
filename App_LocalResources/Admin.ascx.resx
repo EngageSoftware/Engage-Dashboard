@@ -155,11 +155,12 @@
     <value>Page Settings</value>
   </data>
   <data name="Pages and Content.Text" xml:space="preserve">
-    <value>&lt;p&gt;The complexity and maintainability of your site is usually linked quite closely to the number of pages on your site. This section tells you how many pages you have created, and provides a link to the page management screen. &lt;/p&gt;&lt;p&gt;
-When you delete a page or module, it is not completely removed from the site; rather it is moved to the Recycle Bin. From the Recycle Bin, you can either retrieve or permanently delete the item from your site. &lt;/p&gt;&lt;p&gt;
-If you see the number of items in your Recycle Bin piling up, head on over to the Recycle Bin page, it may be time to do some housekeeping on your site to keep things manageable and clean. 
-The reports in this section help manage the pages and content on your site. The list of pages without modules can help you remember pages for which set-up is incomplete, or that have been orphaned after you uninstalled a module.&lt;/p&gt;&lt;p&gt;
-Similarly, pages and modules that are only visible to administrators can be a clue to pages that you have not completed the configuration of. It also helps you keep track of modules that are used specifically for administrative tasks (like this one).&lt;/p&gt;</value>
+    <value>&lt;p&gt;As your site grows, managing pages can be a concern. This section tells you how many pages you have created, and provides a link to the page management screen. &lt;/p&gt;&lt;p&gt;
+When you delete a page or module, it is not completely removed from the site; rather it is moved to the Recycle Bin. From the Recycle Bin, you can either retrieve or permanently delete the item from your site. 
+If you see the number of items in your Recycle Bin piling up, head on over to the Recycle Bin page, it may be time to do some housekeeping on your site to keep things tidy.  &lt;/p&gt;&lt;p&gt;
+The list of empty pages (i.e. pages without modules) can help you remember pages for which set-up is incomplete, or that have been orphaned after you uninstalled a module. &lt;/p&gt;&lt;p&gt;
+Similarly, pages and modules that are only visible to administrators can be a clue to pages that you have not completed the configuration of. It also helps you keep track of modules that are used specifically for administrative tasks (like this one).
+&lt;/p&gt;</value>
   </data>
   <data name="Pages and Content.Title" xml:space="preserve">
     <value>Pages and Content</value>
@@ -174,8 +175,10 @@ Similarly, pages and modules that are only visible to administrators can be a cl
     <value>Pages which lack keywords:</value>
   </data>
   <data name="Search Engine Optimization.Text" xml:space="preserve">
-    <value>&lt;p&gt;DotNetNuke provides the ability to define keywords and descriptions for your portal, for specific pages within your portal, and often for specific content in a module. This information appears as &lt;a href="http://code.google.com/p/doctype/wiki/MetaElement" target="_blank"&gt;meta&lt;/a&gt; tags, which search engines can read to get a better idea of the content of your site and pages. If you are concerned about your site being seen be search engines, make sure to have a description and keywords for each visible page.&lt;/p&gt;&lt;p&gt;
-The DotNetNuke core search engine indexes the content of Text/HTML modules and the Search Summary by default. The Search Summary is indexed, but not displayed to the user, so you could add keywords into the search indexing even though they wouldn’t show up on the site.&lt;/p&gt;</value>
+    <value>&lt;p&gt;
+DotNetNuke provides the ability to define keywords and descriptions for your portal, for pages within your portal, and often for content in a module. Search engines can read this descriptive information (which appears as &lt;a href="http://code.google.com/p/doctype/wiki/MetaElement" target="_blank"&gt;meta&lt;/a&gt; tags) to get a better idea of the content of your site and pages. If you are concerned about your site being seen by search engines, make sure to have a description and keywords for each visible page.&lt;/p&gt;&lt;p&gt;
+The DotNetNuke core search engine indexes the content and search summary of Text/HTML modules. The search summary is indexed, but not displayed to the user, so you could add keywords into the search indexing even though they wouldn’t show up on the site. 
+&lt;/p&gt;</value>
   </data>
   <data name="Search Engine Optimization.Title" xml:space="preserve">
     <value>Search Engine Optimization</value>

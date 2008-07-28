@@ -122,7 +122,8 @@
   </data>
   <data name="Backup History.Text" xml:space="preserve">
     <value>&lt;p&gt;It is recommended that DotNetNuke (both the file system and database) is backed up regularly. The best practice for production environments is to fully backup your installations of DNN nightly and at least weekly back-up to a physically external database.&lt;/p&gt;&lt;p&gt;
-There are a number of activities in which a backup is strongly recommended. These backups will be done as needed.&lt;ul&gt;
+There are a number of activities in which a backup is strongly recommended. These backups should be done as needed.
+&lt;ul&gt;
 &lt;li&gt;Prior to upgrading DotNetNuke&lt;/li&gt;
 &lt;li&gt;Prior to installing new modules&lt;/li&gt;
 &lt;li&gt;Prior to upgrading an existing module&lt;/li&gt;
@@ -141,9 +142,7 @@ There are a number of activities in which a backup is strongly recommended. Thes
     <value>Database Backups:</value>
   </data>
   <data name="Database Size.Text" xml:space="preserve">
-    <value>&lt;p&gt;It is important to perform scheduled maintenance on your database so that it does not grow too large. One easy metric to keep an eye on is your database log compared to your entire database. Typically the database log should not grow to be more than 10% of the database size. If it does, you should make sure to shrink the log.&lt;/p&gt;&lt;p&gt;
-Keeping track of the database size is important in general, so that you know when you are nearing your limits (whether that's the limits of your hardware, or the limits that your hosting provider has imposed on you).
-&lt;/p&gt;</value>
+    <value>&lt;p&gt;Keeping track of the database size is important so that you know when you are nearing your limits (whether that's the limits of your hardware, or the limits that your hosting provider has imposed on you).One easy metric to keep an eye on is the size of your database log compared to the size of your entire database. If you feel that these are imbalanced, you can use SQL Management Studio to shrink the log file and database.&lt;/p&gt;</value>
   </data>
   <data name="Database Size.Title" xml:space="preserve">
     <value>Database Size</value>
@@ -164,10 +163,10 @@ Keeping track of the database size is important in general, so that you know whe
     <value>Friendly Name</value>
   </data>
   <data name="Log Records.Text" xml:space="preserve">
-    <value>&lt;p&gt;The Event Log stores a record of common events for your website, such as logins and web server restarts, as well as errors that occur. It is a good idea to keep an eye on the log, so that you know what sort of things are going on with your site. As you watch the log, you can see if someone is trying to login with your account, or if they are trying to hack into your site by manipulating URLs or ViewState. After you have viewed events, it is a good idea to clear out old events that no longer concern you.&lt;/p&gt;&lt;p&gt;
-If the Event Log gets too big, you may need to manually clear it out. If your Event Log is acting slow, or you cannot access it at all, you can clear the log from the Host/SQL page, using the command 
+    <value>&lt;p&gt;The Event Log stores a record of common events for your website, such as logins and web server restarts, as well as errors that occur. It is a good idea to keep an eye on the log, so that you know what activities are happening on your site. One benefit of the Event Log is to show you suspicious behavior occurring on your site. It is a good idea to clear out old events that no longer concern you so that the log remains manageable.&lt;/p&gt;&lt;p&gt;
+If the Event Log gets too big, you may need to manually clear it out. If your Event Log is performing slowly, or you cannot access it at all, you can clear the log from the Host/SQL page, using the command 
  &lt;pre&gt;TRUNCATE TABLE {databaseOwner}{objectQualifier}EventLog&lt;/pre&gt;&lt;/p&gt;
-&lt;p&gt;The Site Log can be used to keep track of how users are using your site. If you aren't using this information, make sure that it is turned off by setting the Site Log History setting to 0 in the Host Settings, under Advanced Settings, Other Settings.&lt;/p&gt;</value>
+&lt;p&gt;The Site Log can be used to keep track of how users are viewing your site. If you aren't using this information, make sure that it is turned off by updating Site Log History to 0 in the Host Settings, under Advanced Settings, Other Settings.&lt;/p&gt;</value>
   </data>
   <data name="Log Records.Title" xml:space="preserve">
     <value>Log Records</value>

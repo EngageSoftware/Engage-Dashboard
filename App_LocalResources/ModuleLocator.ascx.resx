@@ -118,10 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About Module Settings.Text" xml:space="preserve">
-    <value>&lt;p&gt;Many of the settings for a module are stored by the core DNN settings mechanisms. These are presented below, if they are used. Some settings are per module. This means that they apply to that particular instance of a module, on every page that has a reference to it. Other settings are per page for a module. This means that they can be different between module instances that a reference copies of each other.&lt;/p&gt;</value>
+    <value>&lt;p&gt;The module locator is an easy way to discover where modules are being used on your site.  It also allows you to drill in and view settings for the module, if they exist.&lt;/p&gt;&lt;p&gt;
+There are two types of module settings.  Some settings are per module. This means that they apply to that particular instance of a module, on every page that has a reference to it. Other settings are per page for a module. This means that they can be different between module instances that are reference copies of each other.
+&lt;/p&gt;</value>
   </data>
   <data name="About Module Settings.Title" xml:space="preserve">
-    <value>Module Settings</value>
+    <value>Module Locator</value>
   </data>
   <data name="Edit Module Settings.Header" xml:space="preserve">
     <value>Module Settings</value>

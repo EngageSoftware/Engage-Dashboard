@@ -133,7 +133,9 @@
     <value>View Article</value>
   </data>
   <data name="Find And Replace.Text" xml:space="preserve">
-    <value>Engage: F3 allows you to quickly search through Text/HTML and &lt;a href="http://www.engagemodules.com/Modules/EngagePublish.aspx" target=_blank&gt;Engage: Publish&lt;/a&gt; content on your website. You can also now search/replace content within your Text/HTML modules. This function will search and replace all the Text/HTML modules on your portal (portals, if you are logged in with Super User access). This may take a while to complete. This can be a very powerful tool, and dangerous if you aren't careful, please be aware of that when you are working with a production website.&lt;strong&gt;  Searches within Engage: F3 are Case Sensitive.&lt;/strong&gt;</value>
+    <value>&lt;p&gt;Engage: F3 allows you to quickly search through Text/HTML and &lt;a href="http://www.engagemodules.com/Modules/EngagePublish.aspx" target=_blank&gt;Engage: Publish&lt;/a&gt; content on your website. You can also search/replace content within your Text/HTML modules. This function will search and replace within all of the Text/HTML modules on your portal.  If you are logged in with Super User access, you can search across portals.&lt;/p&gt;&lt;p&gt;
+Depending on how much content is being searched, this process may take a while to complete. Please note that searches within Engage: F3 are case sensitive. &lt;/p&gt;&lt;p&gt;
+Engage: F3 is a very powerful tool, please use caution when replacing content.&lt;/p&gt;</value>
   </data>
   <data name="ItemIdHeader.Text" xml:space="preserve">
     <value>Item ID</value>
