@@ -165,7 +165,7 @@ There are a number of activities in which a backup is strongly recommended. Thes
   <data name="Log Records.Text" xml:space="preserve">
     <value>&lt;p&gt;The Event Log stores a record of common events for your website, such as logins and web server restarts, as well as errors that occur. It is a good idea to keep an eye on the log, so that you know what activities are happening on your site. One benefit of the Event Log is to show you suspicious behavior occurring on your site. It is a good idea to clear out old events that no longer concern you so that the log remains manageable.&lt;/p&gt;&lt;p&gt;
 If the Event Log gets too big, you may need to manually clear it out. If your Event Log is performing slowly, or you cannot access it at all, you can clear the log from the Host/SQL page, using the command 
- &lt;pre&gt;TRUNCATE TABLE {databaseOwner}{objectQualifier}EventLog&lt;/pre&gt;&lt;/p&gt;
+ &lt;span class="code"&gt; TRUNCATE TABLE {databaseOwner}{objectQualifier}EventLog&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;The Site Log can be used to keep track of how users are viewing your site. If you aren't using this information, make sure that it is turned off by updating Site Log History to 0 in the Host Settings, under Advanced Settings, Other Settings.&lt;/p&gt;</value>
   </data>
   <data name="Log Records.Title" xml:space="preserve">

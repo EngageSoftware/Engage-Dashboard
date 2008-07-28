@@ -176,7 +176,7 @@ Similarly, pages and modules that are only visible to administrators can be a cl
   </data>
   <data name="Search Engine Optimization.Text" xml:space="preserve">
     <value>&lt;p&gt;
-DotNetNuke provides the ability to define keywords and descriptions for your portal, for pages within your portal, and often for content in a module. Search engines can read this descriptive information (which appears as &lt;a href="http://code.google.com/p/doctype/wiki/MetaElement" target="_blank"&gt;meta&lt;/a&gt; tags) to get a better idea of the content of your site and pages. If you are concerned about your site being seen by search engines, make sure to have a description and keywords for each visible page.&lt;/p&gt;&lt;p&gt;
+DotNetNuke provides the ability to define keywords and descriptions for your portal, for pages within your portal, and often for content in a module. Search engines can read this descriptive information (which appears as &lt;a href="http://en.wikipedia.org/wiki/Meta_tag" target="_blank"&gt;meta&lt;/a&gt; tags) to get a better idea of the content of your site and pages. If you are concerned about your site being seen by search engines, make sure to have a description and keywords for each visible page.&lt;/p&gt;&lt;p&gt;
 The DotNetNuke core search engine indexes the content and search summary of Text/HTML modules. The search summary is indexed, but not displayed to the user, so you could add keywords into the search indexing even though they wouldn’t show up on the site. 
 &lt;/p&gt;</value>
   </data>
