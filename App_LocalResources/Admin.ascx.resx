@@ -146,7 +146,7 @@
     <comment>{0} represents "Begin Date" and {1} represents "End Date"</comment>
   </data>
   <data name="Page Link.Header" xml:space="preserve">
-    <value>Page Link</value>
+    <value>Page</value>
   </data>
   <data name="Page Name.Header" xml:space="preserve">
     <value>Page Name</value>
@@ -202,5 +202,14 @@ The DotNetNuke core search engine indexes the content of Text/HTML modules and t
   </data>
   <data name="Recycle Bin Link.Text" xml:space="preserve">
     <value>Recycle Bin</value>
+  </data>
+  <data name="EditModule.Alt" xml:space="preserve">
+    <value>Edit Module</value>
+  </data>
+  <data name="Module Title.Header" xml:space="preserve">
+    <value>Module</value>
+  </data>
+  <data name="PageSettings.Alt" xml:space="preserve">
+    <value>Page Settings</value>
   </data>
 </root>

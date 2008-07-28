@@ -117,32 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="About Module Settings.Text" xml:space="preserve">
+    <value>&lt;p&gt;Many of the settings for a module are stored by the core DNN settings mechanisms. These are presented below, if they are used. Some settings are per module. This means that they apply to that particular instance of a module, on every page that has a reference to it. Other settings are per page for a module. This means that they can be different between module instances that a reference copies of each other.&lt;/p&gt;</value>
+  </data>
+  <data name="About Module Settings.Title" xml:space="preserve">
+    <value>Module Settings</value>
+  </data>
+  <data name="Edit Module Settings.Header" xml:space="preserve">
+    <value>Module Settings</value>
+  </data>
   <data name="Module Settings.Header" xml:space="preserve">
     <value>Per Module Settings</value>
   </data>
-  <data name="Module Settings.Text" xml:space="preserve">
-    <value>&lt;p&gt;Many of the settings for a module are stored by the core DNN settings mechanisms. These are presented below, if they are used. Some settings are per module. This means that they apply to that particular instance of a module, on every page that has a reference to it. Other settings are per page for a module. This means that they can be different between module instances that a reference copies of each other.&lt;/p&gt;</value>
-  </data>
-  <data name="Module Settings.Title" xml:space="preserve">
-    <value>Module Settings</value>
-  </data>
   <data name="Module Title.Header" xml:space="preserve">
-    <value>Module Title</value>
+    <value>Module</value>
+  </data>
+  <data name="ModuleSettings.Alt" xml:space="preserve">
+    <value>Module Settings</value>
   </data>
   <data name="ModuleSettingsItem.Text" xml:space="preserve">
     <value>Per Module Settings:</value>
   </data>
-  <data name="Page Name.Header" xml:space="preserve">
-    <value>Page Name</value>
+  <data name="Page Link.Header" xml:space="preserve">
+    <value>Page</value>
   </data>
   <data name="SelectAModule.Text" xml:space="preserve">
     <value>-- Select a module --</value>
   </data>
   <data name="Setting.Header" xml:space="preserve">
     <value>Setting</value>
-  </data>
-  <data name="Settings Link.Header" xml:space="preserve">
-    <value>Settings Link</value>
   </data>
   <data name="Tab ID.Header" xml:space="preserve">
     <value>Tab ID</value>

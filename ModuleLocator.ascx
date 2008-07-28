@@ -6,14 +6,14 @@
 <%@ Register TagPrefix="engage" TagName="ModuleMessage" Src="Controls/ModuleMessage.ascx" %>
 
 <fieldset>
-    <legend class="SubHead"><asp:Label runat="server" ResourceKey="Module Settings.Title" /> <asp:HyperLink runat="server" ID="AboutModuleSettingsLink" NavigateUrl="javascript:void(0);" CssClass="CommandButton" /></legend>
+    <legend class="SubHead"><asp:Label runat="server" ResourceKey="About Module Settings.Title" /> <asp:HyperLink runat="server" ID="AboutModuleSettingsLink" NavigateUrl="javascript:void(0);" CssClass="CommandButton" /></legend>
 
     <telerik:radcombobox ID="ModuleComboBox" runat="server" Width="50%" AllowCustomText="false" MarkFirstMatch="true" AutoPostBack="True"  />
     <asp:Panel ID="ModuleTabsPanel" runat="server" CssClass="detailsTableWrapper">
         <asp:GridView ID="ModuleTabsGrid" runat="server" AutoGenerateColumns="false" CssClass="detailsTable Normal" AlternatingRowStyle-CssClass="detailsTableAltRow" HeaderStyle-CssClass="detailsTableHeader" RowStyle-CssClass="detailsTableRow" GridLines="None">
             <Columns>
-                <asp:BoundField HeaderText="Tab ID" DataField="TabID" ItemStyle-HorizontalAlign="Center"/>
-                <asp:TemplateField HeaderText="Page Name">
+                <asp:BoundField DataField="TabId" HeaderText="Tab ID" ItemStyle-HorizontalAlign="Center"/>
+                <asp:TemplateField HeaderText="Page Link" HeaderStyle-HorizontalAlign="Left">
                     <ItemTemplate>
                         <asp:HiddenField ID="ModuleIdHiddenField" runat="server" Value='<%# ((int)Eval("ModuleID")).ToString(CultureInfo.InvariantCulture) %>' /> 
                         <asp:HiddenField ID="TabModuleIdHiddenField" runat="server" Value='<%# ((int)Eval("TabModuleID")).ToString(CultureInfo.InvariantCulture) %>' /> 
@@ -22,12 +22,10 @@
                         </asp:HyperLink>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:BoundField HeaderText="Module Title" DataField="ModuleTitle"/>
-                <asp:TemplateField HeaderText="Settings Link" ItemStyle-HorizontalAlign="Center">
+                <asp:BoundField HeaderText="Module Title" DataField="ModuleTitle" />
+                <asp:TemplateField HeaderText="Edit Module Settings" ItemStyle-HorizontalAlign="Center">
                     <ItemTemplate>
-                        <asp:HyperLink runat="server" NavigateUrl='<%# GetSettingsUrl((int)Eval("TabId"), (int)Eval("ModuleId")) %>'>
-                            <asp:Image runat="server" ImageUrl="~/images/action_settings.gif" />
-                        </asp:HyperLink>
+                        <asp:HyperLink runat="server" NavigateUrl='<%# GetSettingsUrl((int)Eval("TabId"), (int)Eval("ModuleId")) %>' ImageUrl="~/images/action_settings.gif" ResourceKey="ModuleSettings.Alt"/>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Tab Module Settings" Visible="false">
@@ -61,5 +59,5 @@
     </asp:Panel>
     <asp:Label ID="ModuleMessageLabel" runat="server" ResourceKey="Ununsed.Text" Visible="False"/>
     
-    <engage:ModuleMessage runat="server" ID="aboutModuleSettingsMessage" ResourceKey="Module Settings.Text" CssClass="Normal" MessageType="Information" style="display:none;" />
+    <engage:ModuleMessage runat="server" ID="aboutModuleSettingsMessage" ResourceKey="About Module Settings.Text" CssClass="Normal" MessageType="Information" style="display:none;" />
 </fieldset>

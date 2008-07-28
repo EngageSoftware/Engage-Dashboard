@@ -23,17 +23,17 @@
     <asp:Panel ID="EmptyPagesPanel" runat="server" CssClass="detailsTableWrapper">
         <asp:GridView ID="EmptyPagesGridView" runat="server" AutoGenerateColumns="false" CssClass="detailsTable Normal" AlternatingRowStyle-CssClass="detailsTableAltRow" HeaderStyle-CssClass="detailsTableHeader" RowStyle-CssClass="detailsTableRow" GridLines="None">
             <Columns>
-                <asp:TemplateField HeaderText="Tab ID">
-                    <ItemTemplate>
-                        <%# Eval("TabID") %>
-                    </ItemTemplate>
-                    <ItemStyle HorizontalAlign="Center" />
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Page Name">
+                <asp:BoundField DataField="TabId" HeaderText="Tab ID" ItemStyle-HorizontalAlign="Center"/>
+                <asp:TemplateField HeaderText="Page Link">
                     <ItemTemplate>
                         <asp:HyperLink runat="server" NavigateUrl='<%# Globals.NavigateURL((int)Eval("TabId")) %>'>
                             <%# Eval("TabName") %>
                         </asp:HyperLink>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Page Settings" ItemStyle-HorizontalAlign="Center">
+                    <ItemTemplate>
+                        <asp:HyperLink runat="server" NavigateUrl='<%# GetPageEditUrl((int)Eval("TabId")) %>' ImageUrl="~/images/action_settings.gif" ResourceKey="PageSettings.Alt"/>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
@@ -45,17 +45,17 @@
     <asp:Panel ID="AdministratorPagesPanel" runat="server" CssClass="detailsTableWrapper">
         <asp:GridView ID="AdministratorPagesGridView" runat="server" AutoGenerateColumns="false" CssClass="detailsTable Normal" AlternatingRowStyle-CssClass="detailsTableAltRow" HeaderStyle-CssClass="detailsTableHeader" RowStyle-CssClass="detailsTableRow" GridLines="None">
             <Columns>
-                <asp:TemplateField HeaderText="Tab ID">
-                    <ItemTemplate>
-                        <%# Eval("TabId") %>
-                    </ItemTemplate>
-                    <ItemStyle HorizontalAlign="Center" />
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Page Name">
+                <asp:BoundField DataField="TabId" HeaderText="Tab ID" ItemStyle-HorizontalAlign="Center"/>
+                <asp:TemplateField HeaderText="Page Link">
                     <ItemTemplate>
                         <asp:HyperLink runat="server" NavigateUrl='<%# Globals.NavigateURL((int)Eval("TabId")) %>'>
                             <%# Eval("TabName") %>
                         </asp:HyperLink>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Page Settings" ItemStyle-HorizontalAlign="Center">
+                    <ItemTemplate>
+                        <asp:HyperLink runat="server" NavigateUrl='<%# GetPageEditUrl((int)Eval("TabId")) %>' ImageUrl="~/images/action_settings.gif" ResourceKey="PageSettings.Alt"/>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
@@ -67,25 +67,18 @@
     <asp:Panel ID="AdministratorModulesPanel" runat="server" CssClass="detailsTableWrapper">
         <asp:GridView ID="AdministratorModulesGridView" runat="server" AutoGenerateColumns="false" CssClass="detailsTable Normal" AlternatingRowStyle-CssClass="detailsTableAltRow" HeaderStyle-CssClass="detailsTableHeader" RowStyle-CssClass="detailsTableRow" GridLines="None">
             <Columns>
-                <asp:TemplateField HeaderText="Tab ID">
-                    <ItemTemplate>
-                        <%# Eval("TabId") %>
-                    </ItemTemplate>
-                    <ItemStyle HorizontalAlign="Center" />
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Page Link">
+                <asp:BoundField DataField="TabId" HeaderText="Tab ID" ItemStyle-HorizontalAlign="Center"/>
+                <asp:TemplateField HeaderText="Page Link" HeaderStyle-HorizontalAlign="Left">
                     <ItemTemplate>
                         <asp:HyperLink runat="server" NavigateUrl='<%# Globals.NavigateURL((int)Eval("TabId")) %>'>
                             <%# Eval("TabName") %>
                         </asp:HyperLink>
                     </ItemTemplate>
-                    <HeaderStyle HorizontalAlign="Left" />
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Edit Module">
+                <asp:BoundField HeaderText="Module Title" DataField="ModuleTitle" />
+                <asp:TemplateField HeaderText="Edit Module" ItemStyle-HorizontalAlign="Center">
                     <ItemTemplate>
-                        <asp:HyperLink runat="server" NavigateUrl='<%# GetModuleEditUrl((int)Eval("ModuleId"), (int)Eval("TabId"))%>'>
-                            <%# Eval("ModuleTitle") %>
-                        </asp:HyperLink>
+                        <asp:HyperLink runat="server" NavigateUrl='<%# GetModuleEditUrl((int)Eval("ModuleId"), (int)Eval("TabId"))%>' ImageUrl="~/images/action_settings.gif" ResourceKey="EditModule.Alt"/>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
@@ -103,17 +96,17 @@
     <asp:Panel ID="PagesWithoutDescriptionPanel" runat="server" CssClass="detailsTableWrapper">
         <asp:GridView ID="PagesWithoutDescriptionGridView" runat="server" AutoGenerateColumns="false" CssClass="detailsTable Normal" AlternatingRowStyle-CssClass="detailsTableAltRow" HeaderStyle-CssClass="detailsTableHeader" RowStyle-CssClass="detailsTableRow" GridLines="None" >
             <Columns>
-                <asp:TemplateField HeaderText="Tab ID">
+                <asp:BoundField DataField="TabId" HeaderText="Tab ID" ItemStyle-HorizontalAlign="Center"/>
+                <asp:TemplateField HeaderText="Page Link" HeaderStyle-HorizontalAlign="Left">
                     <ItemTemplate>
-                        <%# Eval("TabId") %>
-                    </ItemTemplate>
-                    <ItemStyle HorizontalAlign="Center" />
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Page Settings">
-                    <ItemTemplate>
-                        <asp:HyperLink runat="server" NavigateUrl='<%# GetPageEditUrl((int)Eval("TabId")) %>'>
+                        <asp:HyperLink runat="server" NavigateUrl='<%# Globals.NavigateURL((int)Eval("TabId")) %>'>
                             <%# Eval("TabName") %>
                         </asp:HyperLink>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Page Settings" ItemStyle-HorizontalAlign="Center">
+                    <ItemTemplate>
+                        <asp:HyperLink runat="server" NavigateUrl='<%# GetPageEditUrl((int)Eval("TabId")) %>' ImageUrl="~/images/action_settings.gif" ResourceKey="PageSettings.Alt"/>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
@@ -125,17 +118,17 @@
     <asp:Panel ID="PagesWithoutKeywordsPanel" runat="server" CssClass="detailsTableWrapper">
         <asp:GridView ID="PagesWithoutKeywordsGridView" runat="server" AutoGenerateColumns="false" CssClass="detailsTable Normal" AlternatingRowStyle-CssClass="detailsTableAltRow" HeaderStyle-CssClass="detailsTableHeader" RowStyle-CssClass="detailsTableRow" GridLines="None">
             <Columns>
-                <asp:TemplateField HeaderText="Tab ID">
+                <asp:BoundField DataField="TabId" HeaderText="Tab ID" ItemStyle-HorizontalAlign="Center"/>
+                <asp:TemplateField HeaderText="Page Link" HeaderStyle-HorizontalAlign="Left">
                     <ItemTemplate>
-                        <%# Eval("TabId") %>
-                    </ItemTemplate>
-                    <ItemStyle HorizontalAlign="Center" />
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Page Settings">
-                    <ItemTemplate>
-                        <asp:HyperLink runat="server" NavigateUrl='<%# GetPageEditUrl((int)Eval("TabId")) %>'>
+                        <asp:HyperLink runat="server" NavigateUrl='<%# Globals.NavigateURL((int)Eval("TabId")) %>'>
                             <%# Eval("TabName") %>
                         </asp:HyperLink>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Page Settings" ItemStyle-HorizontalAlign="Center">
+                    <ItemTemplate>
+                        <asp:HyperLink runat="server" NavigateUrl='<%# GetPageEditUrl((int)Eval("TabId")) %>' ImageUrl="~/images/action_settings.gif" ResourceKey="PageSettings.Alt"/>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
@@ -147,25 +140,18 @@
     <asp:Panel ID="TextModulesWithoutSummaryPanel" runat="server" CssClass="detailsTableWrapper">
         <asp:GridView ID="TextModulesWithoutSummaryGridView" runat="server" AutoGenerateColumns="false" CssClass="detailsTable Normal" AlternatingRowStyle-CssClass="detailsTableAltRow" HeaderStyle-CssClass="detailsTableHeader" RowStyle-CssClass="detailsTableRow" GridLines="None">
             <Columns>
-                <asp:TemplateField HeaderText="Tab ID">
-                    <ItemTemplate>
-                        <%# Eval("TabId") %>
-                    </ItemTemplate>
-                    <ItemStyle HorizontalAlign="Center" />
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Page Link">
+                <asp:BoundField DataField="TabId" HeaderText="Tab ID" ItemStyle-HorizontalAlign="Center"/>
+                <asp:TemplateField HeaderText="Page Link" HeaderStyle-HorizontalAlign="Left">
                     <ItemTemplate>
                         <asp:HyperLink runat="server" NavigateUrl='<%# Globals.NavigateURL((int)Eval("TabId")) %>'>
                             <%# Eval("TabName") %>
                         </asp:HyperLink>
                     </ItemTemplate>
-                    <HeaderStyle HorizontalAlign="Left" />
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Edit Module">
+                <asp:BoundField HeaderText="Module Title" DataField="ModuleTitle" />
+                <asp:TemplateField HeaderText="Edit Module" ItemStyle-HorizontalAlign="Center">
                     <ItemTemplate>
-                        <asp:HyperLink runat="server" NavigateUrl='<%# GetModuleEditUrl((int)Eval("ModuleId"), (int)Eval("TabId"))%>'>
-                            <%# Eval("ModuleTitle") %>
-                        </asp:HyperLink>
+                        <asp:HyperLink runat="server" NavigateUrl='<%# GetModuleEditUrl((int)Eval("ModuleId"), (int)Eval("TabId"))%>' ImageUrl="~/images/action_settings.gif" ResourceKey="EditModule.Alt"/>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
