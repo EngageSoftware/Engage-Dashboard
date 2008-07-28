@@ -236,13 +236,13 @@ namespace Engage.Dnn.Dashboard
         {
             this.Page.ClientScript.RegisterClientScriptInclude(typeof(ModuleBase), "jquery 1.2.6", JQueryResourcePath);
             this.Page.ClientScript.RegisterClientScriptResource(typeof(ModuleBase), DashboardScriptResourcePath);
-            this.Page.ClientScript.RegisterStartupScript(typeof(ModuleBase), "jQueryNoConflict", "jQuery.noConflict()", true);
+            this.Page.ClientScript.RegisterStartupScript(typeof(ModuleBase), "jQueryNoConflict", "jQuery(document).ready(function(){jQuery.noConflict();});", true);
 
             this.RegisterLinkTextResources();
         }
 
         /// <summary>
-        /// Registers JavaScript variables with the text to use when switching between hidden and shown states using <see cref="GetToggleBehavior"/>.
+        /// Registers JavaScript variables with the text to use when switching between hidden and shown states using <see cref="GetToggleBehavior(string)"/> or <see cref="GetToggleBehavior(string,string,string)"/>.
         /// </summary>
         private void RegisterLinkTextResources()
         {

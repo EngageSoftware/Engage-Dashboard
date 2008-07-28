@@ -1,6 +1,6 @@
 <%@ Control Language="c#" AutoEventWireup="false" Inherits="Engage.Dnn.Dashboard.DashboardItem" Codebehind="DashboardItem.ascx.cs" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
-<div id="DashboardItemWrapper">
+<div class="DashboardItemWrapper">
     <div id='<%=this.ClientID %>' class='DashboardItem Normal <%=CssClass %>'>
         <div class="valueLabel"><label for='<%=this.ValueId %>'><asp:Literal ID="TitleLiteral" runat="server" /></label></div>
         <div class="valueItem" id='<%=this.ValueId %>'><%=this.Value %></div>

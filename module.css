@@ -3,23 +3,18 @@
 		1. Dashboard
 
 ========================================================*/
-.DashboardItem, .About {padding: 0.5%;}
-.DateRangePanel { padding: 2%; width: 100%; }
-.DashboardFieldSet { padding: 2% 0; }
-.DisplayDate {  } /* span wrapped around the date values uses this class */
 
+.DashboardItem { padding: 0.25em;}
+.DashboardFieldSet { padding: 2% 0; }
 .AdminButtons{padding: 1em 0;}
 
 	#EngageDashboard {}
 	.DashboardItem {clear: both; overflow: hidden;}
 		/*#EngageDashboard label {width: 400px;} */
-		#EngageDashboard fieldset {padding: 1em 0.675em; margin: 1em 0; border: none; border-top: 1px #ccc solid; border-bottom: 1px #999 solid;}
-		fieldset {clear: both;}
+		#EngageDashboard fieldset {padding: 1em 0.675em; margin: 1em 0; border: none; border-top: 1px #ccc solid; border-bottom: 1px #999 solid; clear: both;}
+		.DashboardItemWrapper{clear: both; overflow: hidden; width: 100%;}
 		
-		
-		#DashboardItemWrapper{clear: both; overflow: hidden; width: 100%;}
-		
-		.DateRangePanel {clear: both; overflow: hidden; width: 600px;}
+		.DateRangePanel {clear: both; overflow: hidden; padding: 2%; width: 600px;}
 		
 		#EngageDashboard legend{padding: 0 0.75em;}
 		#EngageDashboard legend.SubHead {font-size: 110%; font-weight: normal;}
