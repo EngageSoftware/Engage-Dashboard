@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Backup Date.Header" xml:space="preserve">
+    <value>Backup Date</value>
+  </data>
+  <data name="Backup History.Text" xml:space="preserve">
+    <value>&lt;p&gt;It is recommended that DotNetNuke (both the file system and database) is backed up regularly. The best practice for production environments is to fully backup your installations of DNN nightly and at least weekly back-up to a physically external database.&lt;/p&gt;&lt;p&gt;
+There are a number of activities in which a backup is strongly recommended. These backups will be done as needed.&lt;ul&gt;
+&lt;li&gt;Prior to upgrading DotNetNuke&lt;/li&gt;
+&lt;li&gt;Prior to installing new modules&lt;/li&gt;
+&lt;li&gt;Prior to upgrading an existing module&lt;/li&gt;
+&lt;li&gt;Prior to deleting a module&lt;/li&gt;
+&lt;li&gt;Prior to installing a new skin/containers&lt;/li&gt;
+&lt;li&gt;Prior to deleting a skin/containers&lt;/li&gt;&lt;/ul&gt;
+&lt;/p&gt;</value>
+  </data>
+  <data name="Backup History.Title" xml:space="preserve">
+    <value>Database Backup History</value>
+  </data>
+  <data name="Backup Type.Header" xml:space="preserve">
+    <value>Backup Type</value>
+  </data>
+  <data name="BackupHistory.Text" xml:space="preserve">
+    <value>Database Backups:</value>
+  </data>
+  <data name="Database Size.Text" xml:space="preserve">
+    <value>&lt;p&gt;It is important to perform scheduled maintenance on your database so that it does not grow too large. One easy metric to keep an eye on is your database log compared to your entire database. Typically the database log should not grow to be more than 10% of the database size. If it does, you should make sure to shrink the log.&lt;/p&gt;&lt;p&gt;
+Keeping track of the database size is important in general, so that you know when you are nearing your limits (whether that's the limits of your hardware, or the limits that your hosting provider has imposed on you).
+&lt;/p&gt;</value>
+  </data>
+  <data name="Database Size.Title" xml:space="preserve">
+    <value>Database Size</value>
+  </data>
+  <data name="Database.Header" xml:space="preserve">
+    <value>Database</value>
+  </data>
+  <data name="DatabaseLogSize.Text" xml:space="preserve">
+    <value>Current size of database log:</value>
+  </data>
+  <data name="DatabaseSize.Text" xml:space="preserve">
+    <value>Current size of database:</value>
+  </data>
+  <data name="Device.Header" xml:space="preserve">
+    <value>Device</value>
+  </data>
+  <data name="Friendly Name.Header" xml:space="preserve">
+    <value>Friendly Name</value>
+  </data>
+  <data name="Log Records.Text" xml:space="preserve">
+    <value>&lt;p&gt;The Event Log stores a record of common events for your website, such as logins and web server restarts, as well as errors that occur. It is a good idea to keep an eye on the log, so that you know what sort of things are going on with your site. As you watch the log, you can see if someone is trying to login with your account, or if they are trying to hack into your site by manipulating URLs or ViewState. After you have viewed events, it is a good idea to clear out old events that no longer concern you.&lt;/p&gt;&lt;p&gt;
+If the Event Log gets too big, you may need to manually clear it out. If your Event Log is acting slow, or you cannot access it at all, you can clear the log from the Host/SQL page, using the command 
+ &lt;pre&gt;TRUNCATE TABLE {databaseOwner}{objectQualifier}EventLog&lt;/pre&gt;&lt;/p&gt;
+&lt;p&gt;The Site Log can be used to keep track of how users are using your site. If you aren't using this information, make sure that it is turned off by setting the Site Log History setting to 0 in the Host Settings, under Advanced Settings, Other Settings.&lt;/p&gt;</value>
+  </data>
+  <data name="Log Records.Title" xml:space="preserve">
+    <value>Log Records</value>
+  </data>
+  <data name="ModulesNotInUse.Text" xml:space="preserve">
+    <value>Modules not currently in use:</value>
+  </data>
+  <data name="NoBackups.Text" xml:space="preserve">
+    <value>No backups have been made.</value>
+  </data>
+  <data name="None.Text" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="NumberOfEventLogRecords.Text" xml:space="preserve">
+    <value>Number of records in the Event Log:</value>
+  </data>
+  <data name="NumberOfFailedScheduleProcesses.Text" xml:space="preserve">
+    <value>Number of failed scheduled processes from {0} to {1}:</value>
+  </data>
+  <data name="NumberOfSiteLogRecords.Text" xml:space="preserve">
+    <value>Number of records in the Site Log:</value>
+  </data>
+  <data name="Premium?.Header" xml:space="preserve">
+    <value>Premium?</value>
+  </data>
+  <data name="Recovery Model.Header" xml:space="preserve">
+    <value>Recovery Model</value>
+  </data>
+  <data name="Scheduled Processes.Text" xml:space="preserve">
+    <value>&lt;p&gt;If you have schedule processes that are consistently failing, the performance of other scheduled processes may be affected. Keeping track of failed scheduled processes can help keep the scheduler running smoothly for your site. &lt;/p&gt;</value>
+  </data>
+  <data name="Scheduled Processes.Title" xml:space="preserve">
+    <value>Scheduled Processes</value>
+  </data>
+  <data name="Server Name.Header" xml:space="preserve">
+    <value>Server Name</value>
+  </data>
+  <data name="To.Text" xml:space="preserve">
+    <value> To </value>
+  </data>
+  <data name="Unused Modules.Text" xml:space="preserve">
+    <value>&lt;p&gt;Modules that you do not use on your site can cause a slight performance strain. The website loads all of the modules installed whenever it starts up. If you uninstall the modules that you are not using, this can provide a noticeable acceleration in the startup speed of the site. It also just helps to keep your site more tidy and manageable.&lt;/p&gt;</value>
+  </data>
+  <data name="Unused Modules.Title" xml:space="preserve">
+    <value>Unused Modules</value>
+  </data>
+  <data name="Version.Header" xml:space="preserve">
+    <value>Version</value>
+  </data>
+</root>

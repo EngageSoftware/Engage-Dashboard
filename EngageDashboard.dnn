@@ -1,0 +1,45 @@
+<dotnetnuke version="3.0" type="Module">
+	<folders>
+		<folder>
+			<name>Engage: Dashboard</name>
+			<friendlyname>Engage: Dashboard</friendlyname>
+			<foldername>EngageDashboard</foldername>
+			<modulename>Engage: Dashboard</modulename>
+			<description>
+        An Dashboard module from Engage Software (www.engagemodules.com) which displays statistics and other helpful information about your DotNetNuke website.
+      </description>
+			<version>01.00.00</version>
+			<businesscontrollerclass>Engage.Dnn.Dashboard.FeaturesController</businesscontrollerclass>
+			<dependencies>System.Web.UI.ScriptManager</dependencies>
+			<resourcefile>Resources.zip</resourcefile>
+			<modules>
+				<module>
+					<friendlyname>Engage: Dashboard</friendlyname>
+					<cachetime>0</cachetime>
+					<controls>
+						<control>
+							<src>DesktopModules/EngageDashboard/MainContainer.ascx</src>
+							<type>View</type>
+							<supportspartialrendering>true</supportspartialrendering>
+              <helpurl>http://www.engagemodules.com/Support.aspx</helpurl>
+						</control>
+					</controls>
+				</module>
+			</modules>
+			<files>
+				<file>
+					<name>EngageDashboard.dll</name>
+				</file>
+        <file>
+          <name>Engage.Dnn.Utility.dll</name>
+        </file>
+        <file>
+          <name>Engage.Utilityv3.0.dll</name>
+        </file>
+        <file>
+          <name>Telerik.Web.UI.dll</name>
+        </file>
+      </files>
+		</folder>
+	</folders>
+</dotnetnuke>

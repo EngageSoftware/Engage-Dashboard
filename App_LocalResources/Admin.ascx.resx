@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdministratorModulesItem.Text" xml:space="preserve">
+    <value>Modules visible only to Administrators:</value>
+  </data>
+  <data name="AdministratorPagesItem.Text" xml:space="preserve">
+    <value>Pages visible only to Administrators:</value>
+  </data>
+  <data name="Edit Module.Header" xml:space="preserve">
+    <value>Edit Module</value>
+  </data>
+  <data name="EmptyPagesItem.Text" xml:space="preserve">
+    <value>List of empty pages:</value>
+  </data>
+  <data name="None.Text" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="NumberInRecycleBinItem.Text" xml:space="preserve">
+    <value>Number of Pages/Modules in the Recycle Bin:</value>
+  </data>
+  <data name="NumberOfPagesInPortalItem.Text" xml:space="preserve">
+    <value>Number of Pages in the current Portal:</value>
+  </data>
+  <data name="NumberOfRolesInPortalItem.Text" xml:space="preserve">
+    <value>Number of Roles in the current Portal:</value>
+  </data>
+  <data name="NumberOfUsersRegisteredItem.Text" xml:space="preserve">
+    <value>Users registered between {0} and {1}:</value>
+    <comment>{0} represents "Begin Date" and {1} represents "End Date"</comment>
+  </data>
+  <data name="Page Link.Header" xml:space="preserve">
+    <value>Page Link</value>
+  </data>
+  <data name="Page Name.Header" xml:space="preserve">
+    <value>Page Name</value>
+  </data>
+  <data name="Page Settings.Header" xml:space="preserve">
+    <value>Page Settings</value>
+  </data>
+  <data name="Pages and Content.Text" xml:space="preserve">
+    <value>&lt;p&gt;The complexity and maintainability of your site is usually linked quite closely to the number of pages on your site. This section tells you how many pages you have created, and provides a link to the page management screen. &lt;/p&gt;&lt;p&gt;
+When you delete a page or module, it is not completely removed from the site; rather it is moved to the Recycle Bin. From the Recycle Bin, you can either retrieve or permanently delete the item from your site. &lt;/p&gt;&lt;p&gt;
+If you see the number of items in your Recycle Bin piling up, head on over to the Recycle Bin page, it may be time to do some housekeeping on your site to keep things manageable and clean. 
+The reports in this section help manage the pages and content on your site. The list of pages without modules can help you remember pages for which set-up is incomplete, or that have been orphaned after you uninstalled a module.&lt;/p&gt;&lt;p&gt;
+Similarly, pages and modules that are only visible to administrators can be a clue to pages that you have not completed the configuration of. It also helps you keep track of modules that are used specifically for administrative tasks (like this one).&lt;/p&gt;</value>
+  </data>
+  <data name="Pages and Content.Title" xml:space="preserve">
+    <value>Pages and Content</value>
+  </data>
+  <data name="Pages Link.Text" xml:space="preserve">
+    <value>Pages</value>
+  </data>
+  <data name="PagesWithoutDescriptionItem.Text" xml:space="preserve">
+    <value>Pages which lack a description:</value>
+  </data>
+  <data name="PagesWithoutKeywordsItem.Text" xml:space="preserve">
+    <value>Pages which lack keywords:</value>
+  </data>
+  <data name="Search Engine Optimization.Text" xml:space="preserve">
+    <value>&lt;p&gt;DotNetNuke provides the ability to define keywords and descriptions for your portal, for specific pages within your portal, and often for specific content in a module. This information appears as &lt;a href="http://code.google.com/p/doctype/wiki/MetaElement" target="_blank"&gt;meta&lt;/a&gt; tags, which search engines can read to get a better idea of the content of your site and pages. If you are concerned about your site being seen be search engines, make sure to have a description and keywords for each visible page.&lt;/p&gt;&lt;p&gt;
+The DotNetNuke core search engine indexes the content of Text/HTML modules and the Search Summary by default. The Search Summary is indexed, but not displayed to the user, so you could add keywords into the search indexing even though they wouldn’t show up on the site.&lt;/p&gt;</value>
+  </data>
+  <data name="Search Engine Optimization.Title" xml:space="preserve">
+    <value>Search Engine Optimization</value>
+  </data>
+  <data name="Security Roles Link.Text" xml:space="preserve">
+    <value>Security Roles</value>
+  </data>
+  <data name="Tab ID.Header" xml:space="preserve">
+    <value>Tab ID</value>
+  </data>
+  <data name="TextModulesWithoutSummaryItem.Text" xml:space="preserve">
+    <value>Text/HTML modules which lack a Search Summary:</value>
+  </data>
+  <data name="UniqueUsersLoggedInItem.Text" xml:space="preserve">
+    <value>Unique users logged in between {0} and {1}:</value>
+    <comment>{0} represents "Begin Date" and {1} represents "End Date"</comment>
+  </data>
+  <data name="Users.Text" xml:space="preserve">
+    <value>&lt;p&gt;For sites allowing user registration, tracking user registration and traffic from registered users are important metrics. This section allows you to review registration activity and the site traffic of your registered users over specific timeframes.&lt;/p&gt;
+&lt;p&gt;Additionally, site complexity for sites allowing user registration can be measured by the number of roles created. From here, you can go to the Security Roles management page to see and edit the available roles.&lt;/p&gt;</value>
+  </data>
+  <data name="Users.Title" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="Recycle Bin Link.Text" xml:space="preserve">
+    <value>Recycle Bin</value>
+  </data>
+</root>

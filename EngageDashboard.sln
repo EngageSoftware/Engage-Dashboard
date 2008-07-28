@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngageDashboard", "EngageDashboard.csproj", "{23531024-7CAF-469B-80F3-02741F12EAF9}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://etg30:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = EngageDashboard.csproj
+		SccLocalPath1 = .
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23531024-7CAF-469B-80F3-02741F12EAF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23531024-7CAF-469B-80F3-02741F12EAF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23531024-7CAF-469B-80F3-02741F12EAF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23531024-7CAF-469B-80F3-02741F12EAF9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

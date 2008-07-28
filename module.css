@@ -1,0 +1,87 @@
+﻿/*========================================================
+
+		1. Dashboard
+
+========================================================*/
+.DashboardItem, .About {padding: 0.5%;}
+.DateRangePanel { padding: 2%; width: 100%; }
+.DashboardFieldSet { padding: 2% 0; }
+.DisplayDate {  } /* span wrapped around the date values uses this class */
+
+.AdminButtons{padding: 1em 0;}
+
+	#EngageDashboard {}
+	.DashboardItem {clear: both; overflow: hidden;}
+		/*#EngageDashboard label {width: 400px;} */
+		#EngageDashboard fieldset {padding: 1em 0.675em; margin: 1em 0; border: none; border-top: 1px #ccc solid; border-bottom: 1px #999 solid;}
+		fieldset {clear: both;}
+		
+		
+		#DashboardItemWrapper{clear: both; overflow: hidden; width: 100%;}
+		
+		.DateRangePanel {clear: both; overflow: hidden; width: 600px;}
+		
+		#EngageDashboard legend{padding: 0 0.75em;}
+		#EngageDashboard legend.SubHead {font-size: 110%; font-weight: normal;}
+
+		.hSchedule .Normal, .hLogRecords .Normal{background: #e5f8ff url(images/info.png) no-repeat; background-position: 1em 0.75em; border: 1px #288abc solid; padding: 0 1em 0 4.5em; color: #000; */ background-position: 1em 1.75em;}
+
+		.detailsTableWrapper td{padding: 5px 10px;}
+		.detailsTable{}
+			.detailsTableHeader th{font-family: inherit; padding: 5px 10px; font-size: 110%;
+				border-bottom: 1px solid #C1DAD7;border-top: 1px solid #C1DAD7;}
+			.detailsTableAltRow td{background: #F5FAFA; border-bottom: 1px solid #C1DAD7;}
+			.detailsTableRow td{border-bottom: 1px solid #C1DAD7;}
+
+		.valueLabel{width: 60%; float: left;}
+		.valueItem {font-size: 120%; font-weight: bold; width: 15%; float: left;}
+		.valueLink {float: left;}
+		
+.dashboardExpandLink 
+{
+	background-image: url(images/expand.gif);
+}
+.dashboardCollapseLink 
+{
+	background-image: url(images/collapse.gif);
+}
+.dashboardLink 
+{
+	background-repeat: no-repeat; 
+	background-position: 100% 0; 
+	padding:0 12px 0 0;
+}
+		
+/*========================================================
+
+		2. Validation
+
+========================================================*/
+.ModuleMessage{width:90%; padding-top: 1em; margin: 0 auto;}
+.mmTop{height: 5px; line-height: 0; background-color:transparent; background-repeat: no-repeat; background-attachment:scroll; background-position:left bottom;}
+.mmBody{height: 100%; padding: 0.675em 0.675em 1em;  margin:0 auto; overflow: hidden; border-bottom: solid 1px #000;}
+.mmBody .mmIcon{float:left; width: 10%; height:32px; text-indent:-9999px;}
+.mmText{float: right; text-align: left; width: 88%;}
+.mmText{margin: 0; padding: 0;}
+.mmText > p{margin-top: 4px; font-weight: bold; color: #000;}
+.mmBt{height: 5px; background-color:transparent; background-repeat: no-repeat; background-attachment:scroll; background-position:left top;}
+
+/*========================= Error On Page ===============================*/
+
+.ErrorBody {background: #fde0e0; border: 2px #ff0000 solid;}
+.ErrorBody .ErrorIcon{background:url(images/errorSmallIcon.png) no-repeat;}
+
+/*========================= Success ===============================*/
+
+.SuccessBody {background:#f2fff3; border: 2px #5cd800 solid;}
+.SuccessBody .SuccessIcon{background:url(images/successSmallIcon.png) no-repeat;}
+
+/*========================= Warning ===============================*/
+
+.WarningBody {background:#f2fff3; border: 2px #5cd800 solid;}
+.WarningBody .WarningIcon{background:url(images/successSmallIcon.png) no-repeat;}
+
+/*========================= Information ===============================*/
+
+.InformationBody {background:#e5f8ff; border: 2px #288abc solid;}
+.InformationBody .InformationIcon{background:url(images/info.png) no-repeat;}
