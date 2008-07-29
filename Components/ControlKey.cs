@@ -34,6 +34,11 @@ namespace Engage.Dnn.Dashboard
         /// <summary>
         /// Engage: F3 page
         /// </summary>
-        F3
+        F3,
+
+        /// <summary>
+        /// Portal health page
+        /// </summary>
+        Admin
     }
 }

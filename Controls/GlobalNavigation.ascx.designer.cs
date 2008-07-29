@@ -14,6 +14,15 @@ namespace Engage.Dnn.Dashboard {
     public partial class GlobalNavigation {
         
         /// <summary>
+        /// HomeLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HomeLink;
+        
+        /// <summary>
         /// AdminLink control.
         /// </summary>
         /// <remarks>
@@ -39,15 +48,6 @@ namespace Engage.Dnn.Dashboard {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink ModuleLocatorLink;
-        
-        /// <summary>
-        /// SkinLocatorLink control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink SkinLocatorLink;
         
         /// <summary>
         /// F3Link control.

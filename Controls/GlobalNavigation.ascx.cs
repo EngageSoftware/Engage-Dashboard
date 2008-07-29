@@ -13,6 +13,7 @@ namespace Engage.Dnn.Dashboard
 {
     using System;
     using System.Globalization;
+    using System.Web.UI.WebControls;
     using DotNetNuke.Common;
     using DotNetNuke.Entities.Modules;
     using DotNetNuke.Security.Permissions;
@@ -40,24 +41,14 @@ namespace Engage.Dnn.Dashboard
         }
 
         /// <summary>
-        /// Prepends the correct directory structure to the image name.
+        /// Gets the current control key.
         /// </summary>
-        /// <param name="imageName">Filename of the image to use.</param>
-        /// <returns>A full, relative path to the given image.</returns>
-        private static string GetNavigationImage(string imageName)
+        /// <returns>The current control key</returns>
+        private ControlKey? GetCurrentControlKey()
         {
-            return "~" + DesktopModuleFolderName + "Images/" + imageName;
+            string keyValue = this.Request.QueryString["key"];
+            return keyValue != null && Enum.IsDefined(typeof(ControlKey), keyValue) ? (ControlKey?)Enum.Parse(typeof(ControlKey), keyValue) : null;
         }
-
-        /////// <summary>
-        /////// Gets the current control key.
-        /////// </summary>
-        /////// <returns>The current control key</returns>
-        ////private ControlKey? GetCurrentControlKey()
-        ////{
-        ////    string keyValue = this.Request.QueryString["key"];
-        ////    return keyValue != null && Enum.IsDefined(typeof(ControlKey), keyValue) ? (ControlKey?)Enum.Parse(typeof(ControlKey), keyValue) : null;
-        ////}
 
         /// <summary>
         /// Handles the Load event of the Page control.
@@ -71,7 +62,7 @@ namespace Engage.Dnn.Dashboard
             {
                 this.SetupLinks();
                 this.SetVisibility();
-                this.SetImages();
+                this.SetCurrentLink();
             }
             catch (Exception exc)
             {
@@ -84,10 +75,11 @@ namespace Engage.Dnn.Dashboard
         /// </summary>
         private void SetupLinks()
         {
-            this.AdminLink.NavigateUrl = Globals.NavigateURL();
+            this.HomeLink.NavigateUrl = Globals.NavigateURL();
+            this.AdminLink.NavigateUrl = this.BuildLinkUrl(this.ModuleId, ControlKey.Admin);
             this.HostLink.NavigateUrl = this.BuildLinkUrl(this.ModuleId, ControlKey.Host);
             this.ModuleLocatorLink.NavigateUrl = this.BuildLinkUrl(this.ModuleId, ControlKey.ModuleLocator);
-            this.SkinLocatorLink.NavigateUrl = this.BuildLinkUrl(this.ModuleId, ControlKey.SkinLocator);
+            ////this.SkinLocatorLink.NavigateUrl = this.BuildLinkUrl(this.ModuleId, ControlKey.SkinLocator);
             this.F3Link.NavigateUrl = this.BuildLinkUrl(this.ModuleId, ControlKey.F3);
             this.SettingsLink.NavigateUrl = this.EditUrl("ModuleId", this.ModuleId.ToString(CultureInfo.InvariantCulture), "Module");
         }
@@ -102,44 +94,42 @@ namespace Engage.Dnn.Dashboard
         }
 
         /// <summary>
-        /// Sets the image for the current page to a disabled image, if appropriate.
+        /// Sets the style for the currently selected global navigation link
         /// </summary>
-        private void SetImages()
+        private void SetCurrentLink()
         {
-            this.AdminLink.ImageUrl = GetNavigationImage("admin.gif");
-            this.HostLink.ImageUrl = GetNavigationImage("host.gif");
-            this.ModuleLocatorLink.ImageUrl = GetNavigationImage("moduleLocator.gif");
-            this.SkinLocatorLink.ImageUrl = GetNavigationImage("skinLocator.gif");
-            this.F3Link.ImageUrl = GetNavigationImage("f3.gif");
-            this.SettingsLink.ImageUrl = GetNavigationImage("settings.gif");
+            HyperLink currentLink;
+            ControlKey? currentControlKey = this.GetCurrentControlKey();
+            if (!currentControlKey.HasValue)
+            {
+                currentLink = this.HomeLink;
+            }
+            else
+            {
+                switch (currentControlKey.Value)
+                {
+                    case ControlKey.Host:
+                        currentLink = this.HostLink;
+                        break;
+                    case ControlKey.ModuleLocator:
+                        currentLink = this.ModuleLocatorLink;
+                        break;
+                    ////case ControlKey.SkinLocator:
+                    ////    currentLink = this.SkinLocatorLink;
+                    ////    break;
+                    case ControlKey.F3:
+                        currentLink = this.F3Link;
+                        break;
+                    case ControlKey.Admin:
+                        currentLink = this.AdminLink;
+                        break;
+                    default:
+                        currentLink = this.HomeLink;
+                        break;
+                }
+            }
 
-            // TODO: Add selected link images/style to replace disabled images in global navigation
-            ////ControlKey? currentControlKey = this.GetCurrentControlKey();
-            ////if (!currentControlKey.HasValue)
-            ////{
-            ////    this.AdminLink.ImageUrl = GetNavigationImage("admin_disabled.gif");
-            ////}
-            ////else
-            ////{
-            ////    switch (currentControlKey.Value)
-            ////    {
-            ////        case ControlKey.Host:
-            ////            this.HostLink.ImageUrl = GetNavigationImage("host_disabled.gif");
-            ////            break;
-            ////        case ControlKey.ModuleLocator:
-            ////            this.ModuleLocatorLink.ImageUrl = GetNavigationImage("moduleLocator_disabled.gif");
-            ////            break;
-            ////        case ControlKey.SkinLocator:
-            ////            this.SkinLocatorLink.ImageUrl = GetNavigationImage("skinLocator_disabled.gif");
-            ////            break;
-            ////        case ControlKey.F3:
-            ////            this.F3Link.ImageUrl = GetNavigationImage("f3_disabled.gif");
-            ////            break;
-            ////        default:
-            ////            this.AdminLink.ImageUrl = GetNavigationImage("admin_disabled.gif");
-            ////            break;
-            ////    }
-            ////}
+            currentLink.CssClass = Engage.Utility.AddCssClass(currentLink.CssClass, "currentGlobalNavLink");
         }
     }
 }

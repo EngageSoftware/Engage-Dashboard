@@ -123,6 +123,9 @@
   <data name="F3.Alt" xml:space="preserve">
     <value>Engage: F3</value>
   </data>
+  <data name="Home.Alt" xml:space="preserve">
+    <value>Home</value>
+  </data>
   <data name="Host.Alt" xml:space="preserve">
     <value>Host Health</value>
   </data>

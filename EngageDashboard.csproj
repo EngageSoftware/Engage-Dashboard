@@ -67,6 +67,10 @@
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
+    <Reference Include="Telerik.Charting, Version=2.0.3.0, Culture=neutral, PublicKeyToken=d14f3dcc8e3e8763, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\telerik\RadControls for ASPNET AJAX Q2 2008\Bin\Telerik.Charting.dll</HintPath>
+    </Reference>
     <Reference Include="Telerik.Web.UI, Version=2008.2.723.20, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files\telerik\RadControls for ASPNET AJAX Q2 2008\Bin\Telerik.Web.UI.dll</HintPath>
@@ -130,6 +134,13 @@
     </Compile>
     <Compile Include="Controls\ModuleMessage.ascx.designer.cs">
       <DependentUpon>ModuleMessage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.ascx.cs">
+      <DependentUpon>Home.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.ascx.designer.cs">
+      <DependentUpon>Home.ascx</DependentUpon>
     </Compile>
     <Compile Include="F3.ascx.cs">
       <DependentUpon>F3.ascx</DependentUpon>
@@ -233,6 +244,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Controls\ModuleMessage.ascx" />
+    <Content Include="Home.ascx" />
     <Content Include="Images\admin.gif" />
     <Content Include="Images\admin_disabled.gif" />
     <Content Include="Images\collapse.gif" />

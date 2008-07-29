@@ -26,7 +26,7 @@ namespace Engage.Dnn.Dashboard
         /// <summary>
         /// The default control to load when none is indicated
         /// </summary>
-        private const string DefaultControl = "Admin.ascx";
+        private const string DefaultControl = "Home.ascx";
 
         /// <summary>
         /// Raises the <see cref="E:System.Web.UI.Control.Init"/> event.
