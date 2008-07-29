@@ -205,7 +205,7 @@ namespace Engage.Dnn.Dashboard
         /// Gets the modules in the current portal that are only visible to administrators.
         /// </summary>
         /// <param name="portalId">The portal id.</param>
-        /// <returns>A DataTable of the modules in the current portal that are only visible to administrators</returns>
+        /// <returns>The modules in the current portal that are only visible to administrators</returns>
         public override IDataReader GetAdminOnlyModules(int portalId)
         {
             StringBuilder sql = new StringBuilder(256);
@@ -255,7 +255,7 @@ namespace Engage.Dnn.Dashboard
         /// Gets the pages in the given portal that are only visible to administrators.
         /// </summary>
         /// <param name="portalId">The portal id.</param>
-        /// <returns>A DataTable of the pages in the given portal that are only visible to administrators</returns>
+        /// <returns>The pages in the given portal that are only visible to administrators</returns>
         public override IDataReader GetAdminOnlyPages(int portalId)
         {
             StringBuilder sql = new StringBuilder(256);
@@ -422,7 +422,7 @@ namespace Engage.Dnn.Dashboard
         /// Gets a list of the Text/HTML modules with content matching the search string.
         /// </summary>
         /// <param name="searchValue">The search string.</param>
-        /// <returns>A DataTable of the Text/HTML modules with content matching the search string</returns>
+        /// <returns>The Text/HTML modules with content matching the search string</returns>
         public override IDataReader GetMatchingHtmlTextModules(string searchValue)
         {
             StringBuilder sql = new StringBuilder(128);
@@ -445,7 +445,7 @@ namespace Engage.Dnn.Dashboard
         /// </summary>
         /// <param name="searchValue">The search string.</param>
         /// <param name="portalId">The portal id.</param>
-        /// <returns>A DataTable of the Text/HTML modules in the given portal with content matching the search string</returns>
+        /// <returns>The Text/HTML modules in the given portal with content matching the search string</returns>
         public override IDataReader GetMatchingHtmlTextModules(string searchValue, int portalId)
         {
             StringBuilder sql = new StringBuilder(128);
@@ -489,7 +489,7 @@ namespace Engage.Dnn.Dashboard
         /// Gets the module settings for the given module.
         /// </summary>
         /// <param name="moduleId">The module id.</param>
-        /// <returns>A DataTable of the module settings for the given module</returns>
+        /// <returns>The module settings for the given module</returns>
         public override IDataReader GetModuleSettings(int moduleId)
         {
             StringBuilder sql = new StringBuilder(128);
@@ -508,7 +508,7 @@ namespace Engage.Dnn.Dashboard
         /// Gets a list of the pages that are set not to be visible in the menu.
         /// </summary>
         /// <param name="portalId">The portal id.</param>
-        /// <returns>A DataTable of the pages that are set not to be visible in the menu</returns>
+        /// <returns>The pages that are set not to be visible in the menu</returns>
         public override IDataReader GetPagesNotVisible(int portalId)
         {
             StringBuilder sql = new StringBuilder(128);
@@ -642,7 +642,7 @@ namespace Engage.Dnn.Dashboard
         /// Gets the tab module settings for the given tab module id.
         /// </summary>
         /// <param name="tabModuleId">The tab module id.</param>
-        /// <returns>Tthe tab module settings for the given tab module id</returns>
+        /// <returns>The tab module settings for the given tab module id</returns>
         public override IDataReader GetTabModuleSettings(int tabModuleId)
         {
             StringBuilder sql = new StringBuilder(128);
@@ -686,15 +686,14 @@ namespace Engage.Dnn.Dashboard
         /// <returns>The number of unique user logins for the given date span</returns>
         public override int GetUserLoginsInDateSpan(DateTime startDate, DateTime endDate, int portalId)
         {
-            // TODO: should this be <= and >= ?
             StringBuilder sql = new StringBuilder(128);
             sql.Append("SELECT COUNT(*) ");
             sql.AppendFormat("FROM {0}aspnet_Membership m ", this.DatabaseOwner);
             sql.AppendFormat("  INNER JOIN {0}aspnet_Users au ON au.UserId = m.UserId ", this.DatabaseOwner);
             sql.AppendFormat("  INNER JOIN {0}Users u on u.UserName = au.UserName ", this.DnnPrefix);
             sql.AppendFormat("  INNER JOIN {0}UserPortals up on up.UserId = u.UserId ", this.DnnPrefix);
-            sql.Append("WHERE m.LastLoginDate < @endDate ");
-            sql.Append("    AND m.LastLoginDate > @startDate ");
+            sql.Append("WHERE m.LastLoginDate <= @endDate ");
+            sql.Append("    AND m.LastLoginDate >= @startDate ");
             sql.Append("    AND up.PortalID = @portalId");
 
             return Convert.ToInt32(
@@ -721,8 +720,8 @@ namespace Engage.Dnn.Dashboard
             sql.Append("SELECT COUNT(*) ");
             sql.AppendFormat("FROM {0}Users u ", this.DnnPrefix);
             sql.AppendFormat("  INNER JOIN {0}UserPortals up ON u.UserID = up.UserId ", this.DnnPrefix);
-            sql.Append("WHERE up.CreatedDate < @endDate ");
-            sql.Append("    AND up.CreatedDate > @startDate ");
+            sql.Append("WHERE up.CreatedDate <= @endDate ");
+            sql.Append("    AND up.CreatedDate >= @startDate ");
             sql.Append("    AND up.PortalID = @portalId");
 
             return Convert.ToInt32(

@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AdministratorModulesItem.Text" xml:space="preserve">
-    <value>Modules visible only to Administrators:</value>
+    <value>Modules Visible Only to Administrators:</value>
   </data>
   <data name="AdministratorPagesItem.Text" xml:space="preserve">
-    <value>Pages visible only to Administrators:</value>
+    <value>Pages Visible Only to Administrators:</value>
   </data>
   <data name="Edit Module.Header" xml:space="preserve">
     <value>Edit Module</value>
   </data>
   <data name="EmptyPagesItem.Text" xml:space="preserve">
-    <value>List of empty pages:</value>
+    <value>List of Empty Pages:</value>
   </data>
   <data name="None.Text" xml:space="preserve">
     <value>None</value>
@@ -136,13 +136,13 @@
     <value>Number of Pages/Modules in the Recycle Bin:</value>
   </data>
   <data name="NumberOfPagesInPortalItem.Text" xml:space="preserve">
-    <value>Number of Pages in the current Portal:</value>
+    <value>Number of Pages in the Current Portal:</value>
   </data>
   <data name="NumberOfRolesInPortalItem.Text" xml:space="preserve">
-    <value>Number of Roles in the current Portal:</value>
+    <value>Number of Roles in the Current Portal:</value>
   </data>
   <data name="NumberOfUsersRegisteredItem.Text" xml:space="preserve">
-    <value>Users registered between {0} and {1}:</value>
+    <value>Users Registered Between {0} and {1}:</value>
     <comment>{0} represents "Begin Date" and {1} represents "End Date"</comment>
   </data>
   <data name="Page Link.Header" xml:space="preserve">
@@ -169,10 +169,10 @@ Similarly, pages and modules that are only visible to administrators can be a cl
     <value>Pages</value>
   </data>
   <data name="PagesWithoutDescriptionItem.Text" xml:space="preserve">
-    <value>Pages which lack a description:</value>
+    <value>Pages Lacking a Description:</value>
   </data>
   <data name="PagesWithoutKeywordsItem.Text" xml:space="preserve">
-    <value>Pages which lack keywords:</value>
+    <value>Pages Lacking Keywords:</value>
   </data>
   <data name="Search Engine Optimization.Text" xml:space="preserve">
     <value>&lt;p&gt;
@@ -190,10 +190,10 @@ The DotNetNuke core search engine indexes the content and search summary of Text
     <value>Tab ID</value>
   </data>
   <data name="TextModulesWithoutSummaryItem.Text" xml:space="preserve">
-    <value>Text/HTML modules which lack a Search Summary:</value>
+    <value>Text/HTML Modules Lacking a Search Summary:</value>
   </data>
   <data name="UniqueUsersLoggedInItem.Text" xml:space="preserve">
-    <value>Unique users logged in between {0} and {1}:</value>
+    <value>Unique Users Logged in Between {0} and {1}:</value>
     <comment>{0} represents "Begin Date" and {1} represents "End Date"</comment>
   </data>
   <data name="Users.Text" xml:space="preserve">

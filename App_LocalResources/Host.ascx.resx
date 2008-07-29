@@ -151,10 +151,10 @@ There are a number of activities in which a backup is strongly recommended. Thes
     <value>Database</value>
   </data>
   <data name="DatabaseLogSize.Text" xml:space="preserve">
-    <value>Current size of database log:</value>
+    <value>Current Size of Database Log:</value>
   </data>
   <data name="DatabaseSize.Text" xml:space="preserve">
-    <value>Current size of database:</value>
+    <value>Current Size of Database:</value>
   </data>
   <data name="Device.Header" xml:space="preserve">
     <value>Device</value>
@@ -172,7 +172,7 @@ If the Event Log gets too big, you may need to manually clear it out. If your Ev
     <value>Log Records</value>
   </data>
   <data name="ModulesNotInUse.Text" xml:space="preserve">
-    <value>Modules not currently in use:</value>
+    <value>Modules Not Currently in Use:</value>
   </data>
   <data name="NoBackups.Text" xml:space="preserve">
     <value>No backups have been made.</value>
@@ -181,13 +181,13 @@ If the Event Log gets too big, you may need to manually clear it out. If your Ev
     <value>None</value>
   </data>
   <data name="NumberOfEventLogRecords.Text" xml:space="preserve">
-    <value>Number of records in the Event Log:</value>
+    <value>Number of Records in the Event Log:</value>
   </data>
   <data name="NumberOfFailedScheduleProcesses.Text" xml:space="preserve">
-    <value>Number of failed scheduled processes from {0} to {1}:</value>
+    <value>Number of Failed Scheduled Processes from {0} to {1}:</value>
   </data>
   <data name="NumberOfSiteLogRecords.Text" xml:space="preserve">
-    <value>Number of records in the Site Log:</value>
+    <value>Number of Records in the Site Log:</value>
   </data>
   <data name="Premium?.Header" xml:space="preserve">
     <value>Premium?</value>
