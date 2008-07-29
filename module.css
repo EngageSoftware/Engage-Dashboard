@@ -14,7 +14,7 @@
 		#EngageDashboard fieldset {padding: 1em 0.675em; margin: 1em 0; border: none; border-top: 1px #ccc solid; border-bottom: 1px #999 solid; clear: both;}
 		.DashboardItemWrapper{clear: both; overflow: hidden; width: 100%;}
 		
-		.DateRangePanel {clear: both; overflow: hidden; padding: 2%; width: 600px;}
+		.DateRangePanel {clear: both; overflow: hidden; padding: 0.13em; width: 600px;}
 		
 		#EngageDashboard legend{padding: 0 0.75em;}
 		#EngageDashboard legend.SubHead {font-size: 110%; font-weight: normal;}
