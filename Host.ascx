@@ -23,7 +23,11 @@
         <asp:GridView ID="BackupHistoryGridView" AutoGenerateColumns="false" runat="server" CssClass="detailsTable Normal" AlternatingRowStyle-CssClass="detailsTableAltRow" HeaderStyle-CssClass="detailsTableHeader" RowStyle-CssClass="detailsTableRow" GridLines="None">
             <Columns>
                 <asp:BoundField DataField="Backup Date" HeaderText="Backup Date" DataFormatString="{0:MM/dd HH:mm}" />
-                <asp:BoundField DataField="Backup Type" HeaderText="Backup Type" />
+                <asp:TemplateField HeaderText="Backup Type">
+                    <ItemTemplate>
+                        <%#GetBackupType(Eval("Backup Type")) %>
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:BoundField DataField="Server Name" HeaderText="Server Name" />
                 <asp:BoundField DataField="Database" HeaderText="Database" />
                 <asp:BoundField DataField="Recovery Model" HeaderText="Recovery Model" />

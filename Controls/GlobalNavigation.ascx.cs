@@ -49,15 +49,15 @@ namespace Engage.Dnn.Dashboard
             return "~" + DesktopModuleFolderName + "Images/" + imageName;
         }
 
-        /// <summary>
-        /// Gets the current control key.
-        /// </summary>
-        /// <returns>The current control key</returns>
-        private ControlKey? GetCurrentControlKey()
-        {
-            string keyValue = this.Request.QueryString["key"];
-            return keyValue != null && Enum.IsDefined(typeof(ControlKey), keyValue) ? (ControlKey?)Enum.Parse(typeof(ControlKey), keyValue) : null;
-        }
+        /////// <summary>
+        /////// Gets the current control key.
+        /////// </summary>
+        /////// <returns>The current control key</returns>
+        ////private ControlKey? GetCurrentControlKey()
+        ////{
+        ////    string keyValue = this.Request.QueryString["key"];
+        ////    return keyValue != null && Enum.IsDefined(typeof(ControlKey), keyValue) ? (ControlKey?)Enum.Parse(typeof(ControlKey), keyValue) : null;
+        ////}
 
         /// <summary>
         /// Handles the Load event of the Page control.
@@ -113,32 +113,33 @@ namespace Engage.Dnn.Dashboard
             this.F3Link.ImageUrl = GetNavigationImage("f3.gif");
             this.SettingsLink.ImageUrl = GetNavigationImage("settings.gif");
 
-            ControlKey? currentControlKey = this.GetCurrentControlKey();
-            if (!currentControlKey.HasValue)
-            {
-                this.AdminLink.ImageUrl = GetNavigationImage("admin_disabled.gif");
-            }
-            else
-            {
-                switch (currentControlKey.Value)
-                {
-                    case ControlKey.Host:
-                        this.HostLink.ImageUrl = GetNavigationImage("host_disabled.gif");
-                        break;
-                    case ControlKey.ModuleLocator:
-                        this.ModuleLocatorLink.ImageUrl = GetNavigationImage("moduleLocator_disabled.gif");
-                        break;
-                    case ControlKey.SkinLocator:
-                        this.SkinLocatorLink.ImageUrl = GetNavigationImage("skinLocator_disabled.gif");
-                        break;
-                    case ControlKey.F3:
-                        this.F3Link.ImageUrl = GetNavigationImage("f3_disabled.gif");
-                        break;
-                    default:
-                        this.AdminLink.ImageUrl = GetNavigationImage("admin_disabled.gif");
-                        break;
-                }
-            }
+            // TODO: Add selected link images/style to replace disabled images in global navigation
+            ////ControlKey? currentControlKey = this.GetCurrentControlKey();
+            ////if (!currentControlKey.HasValue)
+            ////{
+            ////    this.AdminLink.ImageUrl = GetNavigationImage("admin_disabled.gif");
+            ////}
+            ////else
+            ////{
+            ////    switch (currentControlKey.Value)
+            ////    {
+            ////        case ControlKey.Host:
+            ////            this.HostLink.ImageUrl = GetNavigationImage("host_disabled.gif");
+            ////            break;
+            ////        case ControlKey.ModuleLocator:
+            ////            this.ModuleLocatorLink.ImageUrl = GetNavigationImage("moduleLocator_disabled.gif");
+            ////            break;
+            ////        case ControlKey.SkinLocator:
+            ////            this.SkinLocatorLink.ImageUrl = GetNavigationImage("skinLocator_disabled.gif");
+            ////            break;
+            ////        case ControlKey.F3:
+            ////            this.F3Link.ImageUrl = GetNavigationImage("f3_disabled.gif");
+            ////            break;
+            ////        default:
+            ////            this.AdminLink.ImageUrl = GetNavigationImage("admin_disabled.gif");
+            ////            break;
+            ////    }
+            ////}
         }
     }
 }

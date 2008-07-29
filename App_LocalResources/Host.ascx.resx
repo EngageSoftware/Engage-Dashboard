@@ -141,6 +141,9 @@ There are a number of activities in which a backup is strongly recommended. Thes
   <data name="BackupHistory.Text" xml:space="preserve">
     <value>Database Backups:</value>
   </data>
+  <data name="Database Differential.Text" xml:space="preserve">
+    <value>Database Differential</value>
+  </data>
   <data name="Database Size.Text" xml:space="preserve">
     <value>&lt;p&gt;Keeping track of the database size is important so that you know when you are nearing your limits (whether that's the limits of your hardware, or the limits that your hosting provider has imposed on you).One easy metric to keep an eye on is the size of your database log compared to the size of your entire database. If you feel that these are imbalanced, you can use SQL Management Studio to shrink the log file and database.&lt;/p&gt;</value>
   </data>
@@ -148,6 +151,9 @@ There are a number of activities in which a backup is strongly recommended. Thes
     <value>Database Size</value>
   </data>
   <data name="Database.Header" xml:space="preserve">
+    <value>Database</value>
+  </data>
+  <data name="Database.Text" xml:space="preserve">
     <value>Database</value>
   </data>
   <data name="DatabaseLogSize.Text" xml:space="preserve">
@@ -158,6 +164,9 @@ There are a number of activities in which a backup is strongly recommended. Thes
   </data>
   <data name="Device.Header" xml:space="preserve">
     <value>Device</value>
+  </data>
+  <data name="File or Filegroup.Text" xml:space="preserve">
+    <value>File or Filegroup</value>
   </data>
   <data name="Friendly Name.Header" xml:space="preserve">
     <value>Friendly Name</value>
@@ -170,6 +179,9 @@ If the Event Log gets too big, you may need to manually clear it out. If your Ev
   </data>
   <data name="Log Records.Title" xml:space="preserve">
     <value>Log Records</value>
+  </data>
+  <data name="Log.Text" xml:space="preserve">
+    <value>Log</value>
   </data>
   <data name="ModulesNotInUse.Text" xml:space="preserve">
     <value>Modules Not Currently in Use:</value>
@@ -206,6 +218,9 @@ If the Event Log gets too big, you may need to manually clear it out. If your Ev
   </data>
   <data name="To.Text" xml:space="preserve">
     <value> To </value>
+  </data>
+  <data name="Unknown Backup Type.Text" xml:space="preserve">
+    <value>Unknown</value>
   </data>
   <data name="Unused Modules.Text" xml:space="preserve">
     <value>&lt;p&gt;Modules that you do not use on your site can cause a slight performance strain. The website loads all of the modules installed whenever it starts up. If you uninstall the modules that you are not using, this can provide a noticeable acceleration in the startup speed of the site. It also just helps to keep your site more tidy and manageable.&lt;/p&gt;</value>

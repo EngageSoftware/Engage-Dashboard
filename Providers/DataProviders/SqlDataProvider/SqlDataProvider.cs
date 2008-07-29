@@ -308,7 +308,7 @@ namespace Engage.Dnn.Dashboard
             StringBuilder sql = new StringBuilder(128);
             sql.Append("SELECT TOP 10 ");
             sql.Append("	a.backup_finish_date AS 'Backup Date',");
-            sql.Append("	CASE a.[type] WHEN 'D' THEN 'database' WHEN 'L' THEN 'tlog' END AS 'Backup Type',");
+            sql.Append("	a.[type] AS 'Backup Type',");
             sql.Append("    a.server_name AS 'Server Name',");
             sql.Append("	a.database_name AS 'Database',");
             if (this.SupportsSql2005Functionality())
@@ -338,6 +338,26 @@ namespace Engage.Dnn.Dashboard
 
             DataSet ds = SqlHelper.ExecuteDataset(this.ConnectionString, CommandType.Text, sql.ToString());
             foreach (DataRow dr in ds.Tables[1].Select("usage = 'data only'"))
+            {
+                return dr["size"].ToString();
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Gets the size of the log file for the database.
+        /// </summary>
+        /// <returns>The size of the database log in MB.</returns>
+        public override string GetDatabaseLogSize()
+        {
+            StringBuilder sql = new StringBuilder(128);
+            sql.Append("EXEC sp_helpdb [");
+            sql.Append(this.GetDatabaseName());
+            sql.Append("]");
+
+            DataSet ds = SqlHelper.ExecuteDataset(this.ConnectionString, CommandType.Text, sql.ToString());
+            foreach (DataRow dr in ds.Tables[1].Select("usage = 'log only'"))
             {
                 return dr["size"].ToString();
             }
@@ -463,26 +483,6 @@ namespace Engage.Dnn.Dashboard
                 sql.ToString(),
                 Utility.CreateIntegerParam("@portalId", portalId),
                 Utility.CreateVarcharParam("@searchValue", "%" + searchValue + "%"));
-        }
-
-        /// <summary>
-        /// Gets the size of the log file for the database.
-        /// </summary>
-        /// <returns>The size of the database log in MB.</returns>
-        public override string GetDatabaseLogSize()
-        {
-            StringBuilder sql = new StringBuilder(128);
-            sql.Append("EXEC sp_helpdb [");
-            sql.Append(this.GetDatabaseName());
-            sql.Append("]");
-            string logSize = Null.NullString;
-            DataSet ds = SqlHelper.ExecuteDataset(this.ConnectionString, CommandType.Text, sql.ToString());
-            foreach (DataRow dr in ds.Tables[1].Select("usage = 'log only'"))
-            {
-                logSize = dr["size"].ToString();
-            }
-
-            return logSize;
         }
 
         /// <summary>
