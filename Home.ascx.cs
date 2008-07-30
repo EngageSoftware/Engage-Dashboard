@@ -17,7 +17,6 @@ namespace Engage.Dnn.Dashboard
     using System.Xml.XPath;
     using DotNetNuke.Common;
     using DotNetNuke.Services.Exceptions;
-    using DotNetNuke.Services.Localization;
     using DotNetNuke.Services.Packages;
 
     /// <summary>
@@ -63,7 +62,6 @@ namespace Engage.Dnn.Dashboard
         {
             try
             {
-                this.SetupPanelText();
                 this.FillData();
             }
             catch (Exception exc)
@@ -96,15 +94,6 @@ namespace Engage.Dnn.Dashboard
         }
 
         /// <summary>
-        /// Setups the panel text.
-        /// </summary>
-        private void SetupPanelText()
-        {
-            this.ChartsPanel.GroupingText = Localization.GetString("ChartsPanel.Text", this.LocalResourceFile);
-            this.InstallChartingPanel.GroupingText = Localization.GetString("InstallChartingPanel.Text", this.LocalResourceFile);
-        }
-
-        /// <summary>
         /// Fills the data.
         /// </summary>
         private void FillData()
@@ -116,8 +105,7 @@ namespace Engage.Dnn.Dashboard
             }
             else
             {
-                this.ChartsPanel.Visible = false;
-                this.InstallChartingPanel.Visible = true;
+                this.ChartsMultiview.SetActiveView(this.InstallChartingView);
             }
         }
     }

@@ -14,13 +14,22 @@ namespace Engage.Dnn.Dashboard {
     public partial class Home {
         
         /// <summary>
-        /// ChartsPanel control.
+        /// ChartsMultiview control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel ChartsPanel;
+        protected global::System.Web.UI.WebControls.MultiView ChartsMultiview;
+        
+        /// <summary>
+        /// ChartsView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View ChartsView;
         
         /// <summary>
         /// UserRegistrationsChart control.
@@ -32,13 +41,13 @@ namespace Engage.Dnn.Dashboard {
         protected global::Telerik.Web.UI.RadChart UserRegistrationsChart;
         
         /// <summary>
-        /// InstallChartingPanel control.
+        /// InstallChartingView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel InstallChartingPanel;
+        protected global::System.Web.UI.WebControls.View InstallChartingView;
         
         /// <summary>
         /// InstallChartingButton control.
