@@ -70,6 +70,7 @@
     <Reference Include="Telerik.Charting, Version=2.0.3.0, Culture=neutral, PublicKeyToken=d14f3dcc8e3e8763, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files\telerik\RadControls for ASPNET AJAX Q2 2008\Bin\Telerik.Charting.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.Web.UI, Version=2008.2.723.20, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -266,7 +267,11 @@
     <Content Include="App_LocalResources\Dashboard.resx">
       <SubType>Designer</SubType>
     </Content>
+    <EmbeddedResource Include="01.00.00.xml" />
     <None Include="JavaScript\jquery-1.2.6.min.debug.js" />
+    <Content Include="App_LocalResources\Home.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
     <EmbeddedResource Include="JavaScript\EngageDashboard.js" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

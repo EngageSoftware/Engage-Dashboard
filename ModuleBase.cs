@@ -13,6 +13,7 @@ namespace Engage.Dnn.Dashboard
 {
     using System;
     using System.Globalization;
+    using System.IO;
     using System.Web;
     using DotNetNuke.Entities.Host;
     using DotNetNuke.Entities.Modules;
@@ -20,6 +21,7 @@ namespace Engage.Dnn.Dashboard
     using DotNetNuke.Framework;
     using DotNetNuke.Security;
     using DotNetNuke.Services.Localization;
+    using DotNetNuke.Services.Packages;
     using Globals = DotNetNuke.Common.Globals;
 
     /// <summary>
@@ -135,7 +137,7 @@ namespace Engage.Dnn.Dashboard
         {
             get
             {
-                return this.Request.IsAuthenticated && PortalSecurity.HasEditPermissions(this.ModuleId, this.TabId);
+                return this.Request.IsAuthenticated && PortalSecurity.HasNecessaryPermission(SecurityAccessLevel.Edit, this.PortalSettings, this.ModuleConfiguration, this.UserInfo.Username);
             }
         }
 

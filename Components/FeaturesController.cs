@@ -14,8 +14,11 @@ namespace Engage.Dnn.Dashboard
     using DotNetNuke.Entities.Modules;
 
     /// <summary>
-    /// Business controller class for this module.  Where we could potentially implement <see cref="IPortable"/>, <see cref="ISearchable"/>, and <see cref="IUpgradeable"/>.
+    /// Business controller class for this module.
     /// </summary>
+    /// <remarks>
+    /// Where we could potentially implement <see cref="IPortable"/>, <see cref="ISearchable"/>, and <see cref="IUpgradeable"/>.
+    /// </remarks>
     public class FeaturesController
     {
     }

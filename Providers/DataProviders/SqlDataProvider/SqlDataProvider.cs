@@ -678,13 +678,42 @@ namespace Engage.Dnn.Dashboard
         }
 
         /// <summary>
+        /// Gets a list of the number of users registered each day over the given date span.
+        /// </summary>
+        /// <param name="startDate">The begin date.</param>
+        /// <param name="endDate">The end date.</param>
+        /// <param name="portalId">The portal id.</param>
+        /// <returns>
+        /// A list of the number of users registered each day over the given date span
+        /// </returns>
+        public override IDataReader GetUserRegistrationsInDateSpan(DateTime startDate, DateTime endDate, int portalId)
+        {
+            StringBuilder sql = new StringBuilder(128);
+            sql.Append("SELECT COUNT(*) ");
+            sql.AppendFormat("FROM {0}Users u ", this.DnnPrefix);
+            sql.AppendFormat("  INNER JOIN {0}UserPortals up ON u.UserID = up.UserId ", this.DnnPrefix);
+            sql.Append("WHERE up.CreatedDate < @endDate + 1 ");
+            sql.Append("    AND up.CreatedDate >= @startDate ");
+            sql.Append("    AND up.PortalID = @portalId ");
+            sql.Append("GROUP BY up.CreatedDate");
+
+            return SqlHelper.ExecuteReader(
+                this.ConnectionString,
+                CommandType.Text,
+                sql.ToString(),
+                Utility.CreateDateTimeParam("@startDate", startDate),
+                Utility.CreateDateTimeParam("@endDate", endDate),
+                Utility.CreateIntegerParam("@portalId", portalId));
+        }
+
+        /// <summary>
         /// Gets the number of unique user logins for the given date span.
         /// </summary>
         /// <param name="startDate">The start date.</param>
         /// <param name="endDate">The end date.</param>
         /// <param name="portalId">The portal id.</param>
         /// <returns>The number of unique user logins for the given date span</returns>
-        public override int GetUserLoginsInDateSpan(DateTime startDate, DateTime endDate, int portalId)
+        public override int GetNumberOfUserLoginsInDateSpan(DateTime startDate, DateTime endDate, int portalId)
         {
             StringBuilder sql = new StringBuilder(128);
             sql.Append("SELECT COUNT(*) ");
@@ -692,7 +721,7 @@ namespace Engage.Dnn.Dashboard
             sql.AppendFormat("  INNER JOIN {0}aspnet_Users au ON au.UserId = m.UserId ", this.DatabaseOwner);
             sql.AppendFormat("  INNER JOIN {0}Users u on u.UserName = au.UserName ", this.DnnPrefix);
             sql.AppendFormat("  INNER JOIN {0}UserPortals up on up.UserId = u.UserId ", this.DnnPrefix);
-            sql.Append("WHERE m.LastLoginDate <= @endDate ");
+            sql.Append("WHERE m.LastLoginDate < @endDate + 1 ");
             sql.Append("    AND m.LastLoginDate >= @startDate ");
             sql.Append("    AND up.PortalID = @portalId");
 
@@ -720,7 +749,7 @@ namespace Engage.Dnn.Dashboard
             sql.Append("SELECT COUNT(*) ");
             sql.AppendFormat("FROM {0}Users u ", this.DnnPrefix);
             sql.AppendFormat("  INNER JOIN {0}UserPortals up ON u.UserID = up.UserId ", this.DnnPrefix);
-            sql.Append("WHERE up.CreatedDate <= @endDate ");
+            sql.Append("WHERE up.CreatedDate < @endDate + 1 ");
             sql.Append("    AND up.CreatedDate >= @startDate ");
             sql.Append("    AND up.PortalID = @portalId");
 

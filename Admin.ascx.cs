@@ -89,7 +89,7 @@ namespace Engage.Dnn.Dashboard
             this.NumberOfUsersRegisteredItem.SetValue(DataProvider.Instance().GetNumberOfUserRegistrationsInDateSpan(
                 this.NumberOfUsersRegisteredItem.BeginDate.Value, this.NumberOfUsersRegisteredItem.EndDate.Value, this.PortalId));
 
-            this.UniqueUsersLoggedInItem.SetValue(DataProvider.Instance().GetUserLoginsInDateSpan(
+            this.UniqueUsersLoggedInItem.SetValue(DataProvider.Instance().GetNumberOfUserLoginsInDateSpan(
                 this.UniqueUsersLoggedInItem.BeginDate.Value, this.UniqueUsersLoggedInItem.EndDate.Value, this.PortalId));
 
             this.NumberOfPagesInPortalItem.NavigateUrl = this.GetUrlForModule("Tabs");

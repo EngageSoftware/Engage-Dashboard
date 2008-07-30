@@ -12,7 +12,13 @@
 namespace Engage.Dnn.Dashboard
 {
     using System;
+    using System.IO;
+    using System.Web.Hosting;
+    using System.Xml.XPath;
+    using DotNetNuke.Common;
     using DotNetNuke.Services.Exceptions;
+    using DotNetNuke.Services.Localization;
+    using DotNetNuke.Services.Packages;
 
     /// <summary>
     /// Displays an overview of the statistics contained in the module
@@ -27,6 +33,24 @@ namespace Engage.Dnn.Dashboard
         {
             base.OnInit(e);
             this.Load += this.Page_Load;
+            this.InstallChartingButton.Click += this.InstallChartingButton_Click;
+        }
+
+        /// <summary>
+        /// Determines whether the Telerik Charting component has been installed into the web.config.
+        /// </summary>
+        /// <returns><c>true</c> if Telerik charting is installed in the web.config, otherwise <c>false</c></returns>
+        private bool ChartingIsInstalled()
+        {
+            // ReSharper disable AssignNullToNotNullAttribute
+            XPathDocument configXml = new XPathDocument(HostingEnvironment.MapPath("~/web.config"));
+
+            // ReSharper restore AssignNullToNotNullAttribute
+            XPathExpression httpHandlerPath = this.Request.ServerVariables["SERVER_SOFTWARE"] != "Microsoft-IIS/7.0"
+                                                  ? XPathExpression.Compile("//configuration/system.web/httpHandlers/add[@path='ChartImage.axd']")
+                                                  : XPathExpression.Compile("//configuration/system.webServer/handlers/add[@path='ChartImage.axd']");
+
+            return configXml.CreateNavigator().SelectSingleNode(httpHandlerPath) != null;
         }
 
         /// <summary>
@@ -38,7 +62,8 @@ namespace Engage.Dnn.Dashboard
         private void Page_Load(object sender, EventArgs e)
         {
             try
-            {              
+            {
+                this.SetupPanelText();
                 this.FillData();
             }
             catch (Exception exc)
@@ -48,10 +73,52 @@ namespace Engage.Dnn.Dashboard
         }
 
         /// <summary>
+        /// Handles the Click event of the InstallChartingButton control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void InstallChartingButton_Click(object sender, EventArgs e)
+        {
+            this.InstallTelerikCharting();
+        }
+
+        /// <summary>
+        /// Installs support for Telerik Charting in the web.config.
+        /// </summary>
+        private void InstallTelerikCharting()
+        {
+            using (Stream xmlMergeManifest = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("Engage.Dnn.Dashboard.01.00.00.xml"))
+            {
+                XmlMerge configMerge = new XmlMerge(xmlMergeManifest, "01.00.00", "Engage: Dashboard");
+                configMerge.UpdateConfigs();
+                this.Response.Redirect(Globals.NavigateURL());
+            }
+        }
+
+        /// <summary>
+        /// Setups the panel text.
+        /// </summary>
+        private void SetupPanelText()
+        {
+            this.ChartsPanel.GroupingText = Localization.GetString("ChartsPanel.Text", this.LocalResourceFile);
+            this.InstallChartingPanel.GroupingText = Localization.GetString("InstallChartingPanel.Text", this.LocalResourceFile);
+        }
+
+        /// <summary>
         /// Fills the data.
         /// </summary>
         private void FillData()
         {
+            if (this.ChartingIsInstalled())
+            {
+                this.UserRegistrationsChart.DataSource = DataProvider.Instance().GetUserRegistrationsInDateSpan(DateTime.Today.AddMonths(-1), DateTime.Today, this.PortalId);
+                this.UserRegistrationsChart.DataBind();
+            }
+            else
+            {
+                this.ChartsPanel.Visible = false;
+                this.InstallChartingPanel.Visible = true;
+            }
         }
     }
 }

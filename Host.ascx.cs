@@ -28,26 +28,21 @@ namespace Engage.Dnn.Dashboard
         /// Based on the type column of msdb.backupset (from http://msdn.microsoft.com/en-us/library/aa260602(SQL.80).aspx)
         /// </remarks>
         /// <param name="backupTypeAbbreviation">The backup type abbreviation.</param>
-        /// <returns>A human-readable form of <see cref="backupTypeAbbreviation"/></returns>
+        /// <returns>A human-readable form of <paramref name="backupTypeAbbreviation"/></returns>
         protected string GetBackupType(object backupTypeAbbreviation)
         {
             switch (backupTypeAbbreviation.ToString()[0])
             {
                 case 'D':
                     return Localization.GetString("Database.Text", this.LocalResourceFile);
-                    break;
                 case 'I':
                     return Localization.GetString("Database Differential.Text", this.LocalResourceFile);
-                    break;
                 case 'L':
                     return Localization.GetString("Log.Text", this.LocalResourceFile);
-                    break;
                 case 'F':
                     return Localization.GetString("File or Filegroup.Text", this.LocalResourceFile);
-                    break;
                 default:
                     return Localization.GetString("Unknown Backup Type.Text", this.LocalResourceFile);
-                    break;
             }
         }
 

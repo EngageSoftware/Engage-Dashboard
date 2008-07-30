@@ -36,7 +36,7 @@ namespace Engage.Dnn.Dashboard
         {
             base.OnInit(e);
 
-            if (PortalSecurity.HasEditPermissions(this.ModuleId, this.TabId))
+            if (PortalSecurity.HasNecessaryPermission(SecurityAccessLevel.Edit, this.PortalSettings, this.ModuleConfiguration, this.UserInfo.Username))
             {
                 this.LoadChildControl(this.GetControlToLoad());
             }

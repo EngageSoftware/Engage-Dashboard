@@ -13,6 +13,7 @@ namespace Engage.Dnn.Dashboard
 {
     using System;
     using System.Data;
+    using System.Diagnostics.CodeAnalysis;
     using DotNetNuke.Framework;
 
     /// <summary>
@@ -20,8 +21,6 @@ namespace Engage.Dnn.Dashboard
     /// </summary>
     public abstract class DataProvider
     {
-        #region Shared/Static Methods
-
         /// <summary>
         /// Singleton reference to the instantiated object 
         /// </summary>
@@ -31,14 +30,10 @@ namespace Engage.Dnn.Dashboard
         /// Gets the concrete instance of the <see cref="DataProvider"/>.
         /// </summary>
         /// <returns>The concrete instance of the <see cref="DataProvider"/></returns>
-        public static new DataProvider Instance()
+        public static DataProvider Instance()
         {
             return provider;
         }
-
-        #endregion
-
-        #region Abstract methods
 
         /// <summary>
         /// Gets the number of pages in the given portal.
@@ -79,14 +74,18 @@ namespace Engage.Dnn.Dashboard
         /// Gets the backup history of the current site.
         /// </summary>
         /// <returns>A DataTable of the backup history of the current site</returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Justification = "The method performs a time-consuming operation. The method is perceivably slower than the time it takes to set or get a field's value.")]
+        [SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate",
+            Justification =
+                "The method performs a time-consuming operation. The method is perceivably slower than the time it takes to set or get a field's value.")]
         public abstract IDataReader GetDatabaseBackupHistory();
 
         /// <summary>
         /// Gets the size of the data file for this database in MB.
         /// </summary>
         /// <returns>The size of the data file for this database in MB</returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Justification = "The method performs a time-consuming operation. The method is perceivably slower than the time it takes to set or get a field's value.")]
+        [SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate",
+            Justification =
+                "The method performs a time-consuming operation. The method is perceivably slower than the time it takes to set or get a field's value.")]
         public abstract string GetSizeOfDatabase();
 
         /// <summary>
@@ -110,7 +109,7 @@ namespace Engage.Dnn.Dashboard
         /// <param name="portalId">The portal id.</param>
         /// <returns>Information about the HTML/Text modules in the given portal that don't have a search summary defined</returns>
         public abstract IDataReader GetHtmlTextModulesWithoutSummary(int portalId);
-        
+
         /// <summary>
         /// Gets a list of the Text/HTML modules in the given portal with content matching the search string.
         /// </summary>
@@ -130,7 +129,9 @@ namespace Engage.Dnn.Dashboard
         /// Gets the size of the log file for the database.
         /// </summary>
         /// <returns>The size of the database log in MB.</returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Justification = "The method performs a time-consuming operation. The method is perceivably slower than the time it takes to set or get a field's value.")]
+        [SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate",
+            Justification =
+                "The method performs a time-consuming operation. The method is perceivably slower than the time it takes to set or get a field's value.")]
         public abstract string GetDatabaseLogSize();
 
         /// <summary>
@@ -195,8 +196,17 @@ namespace Engage.Dnn.Dashboard
         /// Gets a list of the installed modules that are not placed on any pages.
         /// </summary>
         /// <returns>A list of the installed modules that are not placed on any pages</returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Justification = "The method performs a time-consuming operation. The method is perceivably slower than the time it takes to set or get a field's value.")]
+        [SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Justification = "The method performs a time-consuming operation. The method is perceivably slower than the time it takes to set or get a field's value.")]
         public abstract IDataReader GetUnusedModules();
+
+        /// <summary>
+        /// Gets a list of the number of users registered each day over the given date span.
+        /// </summary>
+        /// <param name="startDate">The begin date.</param>
+        /// <param name="endDate">The end date.</param>
+        /// <param name="portalId">The portal id.</param>
+        /// <returns>A list of the number of users registered each day over the given date span</returns>
+        public abstract IDataReader GetUserRegistrationsInDateSpan(DateTime startDate, DateTime endDate, int portalId);
 
         /// <summary>
         /// Gets the number of unique user logins for the given date span.
@@ -205,7 +215,7 @@ namespace Engage.Dnn.Dashboard
         /// <param name="endDate">The end date.</param>
         /// <param name="portalId">The portal id.</param>
         /// <returns>The number of unique user logins for the given date span</returns>
-        public abstract int GetUserLoginsInDateSpan(DateTime startDate, DateTime endDate, int portalId);
+        public abstract int GetNumberOfUserLoginsInDateSpan(DateTime startDate, DateTime endDate, int portalId);
 
         /// <summary>
         /// Gets the number of user registrations in a date span.
@@ -224,13 +234,11 @@ namespace Engage.Dnn.Dashboard
         /// <param name="desktopSummary">The desktop summary.</param>
         /// <param name="userId">The user id.</param>
         public abstract void ReplaceTextHtml(int moduleId, string desktopHtml, string desktopSummary, int userId);
-        
+
         /// <summary>
         /// Whether the database supports SQL Server 2005 functionality.
         /// </summary>
         /// <returns><c>true</c> if the database supports SQL Server 2005 functionality; otherwise, <c>false</c></returns>
         public abstract bool SupportsSql2005Functionality();
-
-        #endregion
     }
 }
