@@ -70,7 +70,10 @@ namespace Engage.Dnn.Dashboard
         {
             try
             {
-                this.FillData();
+                if (!Page.IsPostBack)
+                {
+                    this.FillData();
+                }
             }
             catch (Exception exc)
             {
@@ -105,6 +108,46 @@ namespace Engage.Dnn.Dashboard
         /// Fills the data.
         /// </summary>
         private void FillData()
+        {
+            this.SetUpDashboardGauges();
+            this.SetUpCharting();
+        }
+
+        /// <summary>
+        /// Sets up the Dundas Guage that visualizes the percentage of pages which lack a keyword or a description
+        /// and the percentage of overall database size accounted for by the log file.
+        /// </summary>
+        private void SetUpDashboardGauges()
+        {
+            double databaseSize;
+            double logSize;
+
+            this.DashboardGaugeContainer.ImageUrl = ApplicationUrl + DesktopModuleFolderName + "DashboardGuageTempFiles";
+
+            this.DashboardGaugeContainer.CircularGauges["PagesGauge"].Scales[0].Minimum = 0;
+            this.DashboardGaugeContainer.CircularGauges["PagesGauge"].Scales[0].Maximum = 100;
+            this.DashboardGaugeContainer.CircularGauges["PagesGauge"].Scales[0].Interval = 10;
+
+            this.DashboardGaugeContainer.CircularGauges["DatabaseGauge"].Scales[0].Minimum = 0;
+            this.DashboardGaugeContainer.CircularGauges["DatabaseGauge"].Scales[0].Maximum = 100;
+            this.DashboardGaugeContainer.CircularGauges["DatabaseGauge"].Scales[0].Interval = 10;
+
+            this.DashboardGaugeContainer.CircularGauges["PagesGauge"].Pointers[0].Value = 
+                (DataProvider.Instance().CountPagesWithoutDescriptionOrKeywords(this.PortalId) /
+                DataProvider.Instance().CountPages(this.PortalId)) * 100;
+            
+            // todo: make getting the size of the database and the log safer!
+            if (Double.TryParse(DataProvider.Instance().GetSizeOfDatabase().Replace(" KB", ""), out databaseSize) 
+                && Double.TryParse(DataProvider.Instance().GetDatabaseLogSize().Replace(" KB", ""), out logSize))
+            {
+                this.DashboardGaugeContainer.CircularGauges["DatabaseGauge"].Pointers[0].Value = (logSize / databaseSize) * 100;
+            }
+        }
+
+        /// <summary>
+        /// Sets up charting.
+        /// </summary>
+        private void SetUpCharting()
         {
             if (this.ChartingIsInstalled())
             {

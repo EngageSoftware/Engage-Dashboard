@@ -46,6 +46,7 @@
       <HintPath>..\..\..\Library\bin\DotNetNuke.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="DundasWebGauge, Version=2.1.1.100, Culture=neutral, PublicKeyToken=2cc0651e6e907aa2, processorArchitecture=MSIL" />
     <Reference Include="Engage.Dnn.Utility, Version=1.4.0.17256, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>

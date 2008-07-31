@@ -43,6 +43,13 @@ namespace Engage.Dnn.Dashboard
         public abstract int CountPages(int portalId);
 
         /// <summary>
+        /// Counts the pages without a description or keywords.
+        /// </summary>
+        /// <param name="portalId">The portal id.</param>
+        /// <returns>A count of pages without a description or keywords.</returns>
+        public abstract int CountPagesWithoutDescriptionOrKeywords(int portalId);
+
+        /// <summary>
         /// Gets the number of deleted module and pages in the recycle bin fir the given portal.
         /// </summary>
         /// <param name="portalId">The portal id.</param>

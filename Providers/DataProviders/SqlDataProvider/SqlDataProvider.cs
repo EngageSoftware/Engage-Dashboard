@@ -159,6 +159,31 @@ namespace Engage.Dnn.Dashboard
         }
 
         /// <summary>
+        /// Gets a count of the pages that don't have a description defined.
+        /// </summary>
+        /// <param name="portalId">The portal id.</param>
+        /// <returns>A count of the pages that don't have a description defined</returns>
+        public override int CountPagesWithoutDescriptionOrKeywords(int portalId)
+        {
+            StringBuilder sql = new StringBuilder(128);
+            sql.Append("DECLARE @AdminTabID int ");
+            sql.AppendFormat("SET @AdminTabID = (SELECT t.TabID FROM {0}Tabs t WHERE t.TabName = 'Admin' AND t.ParentID IS NULL AND t.Level = 0 AND t.PortalID = @portalId) ", this.DnnPrefix);
+
+            sql.Append("SELECT count(*)");
+            sql.AppendFormat("FROM {0}Tabs t ", this.DnnPrefix);
+            sql.Append("WHERE t.PortalID = @portalId ");
+            sql.Append("	AND (t.ParentId <> @AdminTabID OR t.ParentId IS NULL) ");
+            sql.Append("	AND t.TabName <> 'Admin' ");
+            sql.Append("	AND (t.Description = '' or t.Keywords = '')");
+
+            return (int)SqlHelper.ExecuteScalar(
+                this.ConnectionString,
+                CommandType.Text,
+                sql.ToString(),
+                Utility.CreateIntegerParam("@portalId", portalId));
+        }
+
+        /// <summary>
         /// Gets the number of deleted module and pages in the recycle bin fir the given portal.
         /// </summary>
         /// <param name="portalId">The portal id.</param>
