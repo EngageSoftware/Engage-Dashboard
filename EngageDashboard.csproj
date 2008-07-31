@@ -46,7 +46,10 @@
       <HintPath>..\..\..\Library\bin\DotNetNuke.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="DundasWebGauge, Version=2.1.1.100, Culture=neutral, PublicKeyToken=2cc0651e6e907aa2, processorArchitecture=MSIL" />
+    <Reference Include="DundasWebGauge, Version=2.1.1.100, Culture=neutral, PublicKeyToken=2cc0651e6e907aa2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Engage.Dnn.Utility, Version=1.4.0.17256, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
@@ -71,7 +74,6 @@
     <Reference Include="Telerik.Charting, Version=2.0.3.0, Culture=neutral, PublicKeyToken=d14f3dcc8e3e8763, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files\telerik\RadControls for ASPNET AJAX Q2 2008\Bin\Telerik.Charting.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.Web.UI, Version=2008.2.723.20, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -254,6 +256,7 @@
     <Content Include="Images\expand.gif" />
     <Content Include="Images\f3.gif" />
     <Content Include="Images\f3_disabled.gif" />
+    <Content Include="Images\home.gif" />
     <Content Include="Images\host.gif" />
     <Content Include="Images\host_disabled.gif" />
     <Content Include="Images\info.png" />
@@ -273,6 +276,9 @@
     <Content Include="App_LocalResources\Home.ascx.resx">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Licenses\EULA-Enterprise.txt" />
+    <Content Include="Licenses\EULA-Professional.txt" />
+    <Content Include="Licenses\EULA-Standard.txt" />
     <EmbeddedResource Include="JavaScript\EngageDashboard.js" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

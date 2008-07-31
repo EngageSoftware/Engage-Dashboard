@@ -13,15 +13,14 @@ namespace Engage.Dnn.Dashboard
 {
     using System;
     using System.Globalization;
-    using System.IO;
     using System.Web;
+    using System.Web.UI;
     using DotNetNuke.Entities.Host;
     using DotNetNuke.Entities.Modules;
     using DotNetNuke.Entities.Modules.Actions;
     using DotNetNuke.Framework;
     using DotNetNuke.Security;
     using DotNetNuke.Services.Localization;
-    using DotNetNuke.Services.Packages;
     using Globals = DotNetNuke.Common.Globals;
 
     /// <summary>
@@ -138,6 +137,25 @@ namespace Engage.Dnn.Dashboard
             get
             {
                 return this.Request.IsAuthenticated && PortalSecurity.HasNecessaryPermission(SecurityAccessLevel.Edit, this.PortalSettings, this.ModuleConfiguration, this.UserInfo.Username);
+            }
+        }
+
+        /// <summary>
+        /// Gets the closest parent of this control which is a <see cref="PortalModuleBase"/>.
+        /// </summary>
+        /// <returns>The closest parent of this control which is a <see cref="PortalModuleBase"/></returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily", Justification = "Casting using 'as' operator would be cumbersome and probably less performant")]
+        protected PortalModuleBase ParentPortalModuleBase
+        {
+            get
+            {
+                Control parentControl = this.Parent;
+                while (parentControl != null && !(parentControl is PortalModuleBase))
+                {
+                    parentControl = parentControl.Parent;
+                }
+
+                return (PortalModuleBase)parentControl;
             }
         }
 

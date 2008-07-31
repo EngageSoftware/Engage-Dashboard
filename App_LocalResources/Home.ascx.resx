@@ -121,9 +121,15 @@
     <value>Charts</value>
   </data>
   <data name="InstallChartingButton.Text" xml:space="preserve">
-    <value>Install Charting Component</value>
+    <value>Install Charting Support</value>
   </data>
-  <data name="InstallChartingPanel.Text" xml:space="preserve">
-    <value>Install Charts</value>
+  <data name="InstallChartingSupport.Text" xml:space="preserve">
+    <value>&lt;p&gt;This module uses &lt;a href="http://www.telerik.com/products/aspnet-ajax/controls/chart/overview.aspx" target="_blank"&gt;Telerik's RadChart&lt;/a&gt; component to display informative charts of various statistics about your site.  This component needs to install an HTTP handler into your web.config.  When you click on the button above, the module will alter your web.config (using the same XmlMerge utility that the DNN code updates use).  This change will cause your site to restart (similar to installing a new module).&lt;/p&gt;
+&lt;p&gt;The installation will add the following line to your web.config's configuration/system.web/httpHandlers section for classic IIS pipeline support: &lt;span class="code"&gt;&amp;lt;add path="ChartImage.axd" verb="*" type="Telerik.Web.UI.ChartHttpHandler, Telerik.Web.UI, Culture=neutral, PublicKeyToken=121fae78165ba3d4" validate="false" /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The following line will be added to your web.config's configuration/system.webServer/handlers section for integrated pipeline support in IIS 7: &lt;span class="code"&gt;&amp;lt;add name="TelerikCharting" path="ChartImage.axd" verb="*" type="Telerik.Web.UI.ChartHttpHandler, Telerik.Web.UI, Culture=neutral, PublicKeyToken=121fae78165ba3d4" preCondition="integratedMode,runtimeVersionv2.0" /&gt;
+&lt;/span&gt;&lt;/p&gt;</value>
+  </data>
+  <data name="InstallChartingSupport.Title" xml:space="preserve">
+    <value>Install Charting Support</value>
   </data>
 </root>

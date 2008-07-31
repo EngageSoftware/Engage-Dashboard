@@ -264,7 +264,7 @@ namespace Engage.Dnn.Dashboard
 
                 // since the global navigation control is not loaded using DNN mechanisms we need to set it here so that calls to 
                 // module related information will appear the same as the actual control this navigation is sitting on.hk
-                this.ModuleConfiguration = this.GetParentControl().ModuleConfiguration;
+                this.ModuleConfiguration = this.ParentPortalModuleBase.ModuleConfiguration;
                 this.LocalResourceFile = "~" + DesktopModuleFolderName + "Controls/App_LocalResources/DashboardItem";
 
                 this.PreRender += this.Page_PreRender;
@@ -288,7 +288,7 @@ namespace Engage.Dnn.Dashboard
         {
             try
             {
-                this.TitleLiteral.Text = Engage.Utility.HasValue(this.TitleResourceKey) ? Localization.GetString(this.TitleResourceKey, this.GetParentControl().LocalResourceFile) : this.Title;
+                this.TitleLiteral.Text = Engage.Utility.HasValue(this.TitleResourceKey) ? Localization.GetString(this.TitleResourceKey, this.ParentPortalModuleBase.LocalResourceFile) : this.Title;
 
                 this.SetupDetails();
                 this.SetupDateRange();
@@ -343,7 +343,7 @@ namespace Engage.Dnn.Dashboard
             {
                 this.NavigateLink.Visible = true;
                 this.NavigateLink.NavigateUrl = this.NavigateUrl;
-                this.NavigateLink.Text = Engage.Utility.HasValue(this.NavigateLinkResourceKey) ? Localization.GetStringUrl(this.NavigateLinkResourceKey, this.GetParentControl().LocalResourceFile) : this.NavigateLinkText;
+                this.NavigateLink.Text = Engage.Utility.HasValue(this.NavigateLinkResourceKey) ? Localization.GetStringUrl(this.NavigateLinkResourceKey, this.ParentPortalModuleBase.LocalResourceFile) : this.NavigateLinkText;
             }
         }
 
@@ -354,22 +354,6 @@ namespace Engage.Dnn.Dashboard
         private Panel GetDetailsPanel()
         {
             return this.DetailsPanelId != null ? (Panel)this.Parent.FindControl(this.DetailsPanelId) : null;
-        }
-
-        /// <summary>
-        /// Gets the closest parent of this control which is a <see cref="PortalModuleBase"/>.
-        /// </summary>
-        /// <returns>The closest parent of this control which is a <see cref="PortalModuleBase"/></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily", Justification = "Casting using 'as' operator would be cumbersome and probably less performant")]
-        private PortalModuleBase GetParentControl()
-        {
-            Control parentControl = this.Parent;
-            while (!(parentControl is PortalModuleBase))
-            {
-                parentControl = parentControl.Parent;
-            }
-
-            return (PortalModuleBase)parentControl;
         }
     }
 }

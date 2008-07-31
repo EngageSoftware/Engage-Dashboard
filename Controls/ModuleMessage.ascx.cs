@@ -229,7 +229,7 @@ namespace Engage.Dnn.Dashboard
 
             // since the global navigation control is not loaded using DNN mechanisms we need to set it here so that calls to 
             // module related information will appear the same as the actual control this navigation is sitting on.hk
-            this.ModuleConfiguration = ((PortalModuleBase)this.Parent).ModuleConfiguration;
+            this.ModuleConfiguration = this.ParentPortalModuleBase.ModuleConfiguration;
             this.LocalResourceFile = "~" + DesktopModuleFolderName + "Controls/App_LocalResources/ModuleMessage.ascx.resx";
 
             this.Load += this.Page_Load;

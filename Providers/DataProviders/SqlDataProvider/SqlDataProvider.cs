@@ -713,14 +713,14 @@ namespace Engage.Dnn.Dashboard
         /// </returns>
         public override IDataReader GetUserRegistrationsInDateSpan(DateTime startDate, DateTime endDate, int portalId)
         {
-            StringBuilder sql = new StringBuilder(128);
-            sql.Append("SELECT COUNT(*) ");
+            StringBuilder sql = new StringBuilder(512);
+            sql.Append("SELECT COUNT(*) AS 'Users Registered', DATEADD(dd, DATEDIFF(dd, 0, up.CreatedDate), 0) AS 'Date' ");
             sql.AppendFormat("FROM {0}Users u ", this.DnnPrefix);
-            sql.AppendFormat("  INNER JOIN {0}UserPortals up ON u.UserID = up.UserId ", this.DnnPrefix);
+            sql.AppendFormat(" INNER JOIN {0}UserPortals up ON u.UserID = up.UserId ", this.DnnPrefix);
             sql.Append("WHERE up.CreatedDate < @endDate + 1 ");
-            sql.Append("    AND up.CreatedDate >= @startDate ");
-            sql.Append("    AND up.PortalID = @portalId ");
-            sql.Append("GROUP BY up.CreatedDate");
+            sql.Append(" AND up.CreatedDate >= @startDate ");
+            sql.Append(" AND up.PortalID = @portalId ");
+            sql.Append("GROUP BY DATEADD(dd, DATEDIFF(dd, 0, up.CreatedDate), 0) ");
 
             return SqlHelper.ExecuteReader(
                 this.ConnectionString,
