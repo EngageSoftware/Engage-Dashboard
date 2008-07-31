@@ -1,7 +1,7 @@
 <configuration>
   <nodes configfile="web.config">
     <node path="/configuration/system.web/httpHandlers" action="update" key="path" collision="overwrite">
-      <add name="TelerikCharting" path="ChartImage.axd" verb="*" type="Telerik.Web.UI.ChartHttpHandler, Telerik.Web.UI, Culture=neutral, PublicKeyToken=121fae78165ba3d4" validate="false" />
+      <add path="ChartImage.axd" verb="*" type="Telerik.Web.UI.ChartHttpHandler, Telerik.Web.UI, Culture=neutral, PublicKeyToken=121fae78165ba3d4" validate="false" />
     </node>
     <node path="/configuration/system.webServer/handlers" action="update" key="path" collision="overwrite">
       <add name="TelerikCharting" path="ChartImage.axd" verb="*" type="Telerik.Web.UI.ChartHttpHandler, Telerik.Web.UI, Culture=neutral, PublicKeyToken=121fae78165ba3d4" preCondition="integratedMode,runtimeVersionv2.0" />
