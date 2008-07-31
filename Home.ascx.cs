@@ -12,6 +12,7 @@
 namespace Engage.Dnn.Dashboard
 {
     using System;
+    using System.Globalization;
     using System.IO;
     using System.Web.Hosting;
     using System.Xml.XPath;
@@ -45,11 +46,18 @@ namespace Engage.Dnn.Dashboard
             XPathDocument configXml = new XPathDocument(HostingEnvironment.MapPath("~/web.config"));
 
             // ReSharper restore AssignNullToNotNullAttribute
-            XPathExpression httpHandlerPath = this.Request.ServerVariables["SERVER_SOFTWARE"] != "Microsoft-IIS/7.0"
-                                                  ? XPathExpression.Compile("//configuration/system.web/httpHandlers/add[@path='ChartImage.axd']")
-                                                  : XPathExpression.Compile("//configuration/system.webServer/handlers/add[@path='ChartImage.axd']");
+            double iisVersion;
+            string iisSoftwareVariable = this.Request.ServerVariables["SERVER_SOFTWARE"];
+            if (iisSoftwareVariable.Contains("/") && double.TryParse(iisSoftwareVariable.Split('/')[1], NumberStyles.Float, CultureInfo.InvariantCulture, out iisVersion))
+            {
+                XPathExpression httpHandlerPath = iisVersion < 7
+                                                      ? XPathExpression.Compile("//configuration/system.web/httpHandlers/add[@path='ChartImage.axd']")
+                                                      : XPathExpression.Compile("//configuration/system.webServer/handlers/add[@path='ChartImage.axd']");
 
-            return configXml.CreateNavigator().SelectSingleNode(httpHandlerPath) != null;
+                return configXml.CreateNavigator().SelectSingleNode(httpHandlerPath) != null;
+            }
+
+            return false;
         }
 
         /// <summary>
