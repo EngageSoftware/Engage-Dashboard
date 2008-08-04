@@ -132,6 +132,12 @@
   <data name="Hide What's This.Text" xml:space="preserve">
     <value>&lt;span class="dashboardCollapseLink dashboardLink"&gt;(Hide Explanation)&lt;/span&gt;</value>
   </data>
+  <data name="Learn Less.Text" xml:space="preserve">
+    <value>&lt;span class="dashboardExpandLink dashboardLink"&gt;Hide Explanation&lt;/span&gt;</value>
+  </data>
+  <data name="Learn More.Text" xml:space="preserve">
+    <value>&lt;span class="dashboardExpandLink dashboardLink"&gt;Learn More...&lt;/span&gt;</value>
+  </data>
   <data name="What's This.Text" xml:space="preserve">
     <value>&lt;span class="dashboardExpandLink dashboardLink"&gt;(What's This?)&lt;/span&gt;</value>
   </data>

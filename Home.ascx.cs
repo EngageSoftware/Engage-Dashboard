@@ -12,7 +12,9 @@
 namespace Engage.Dnn.Dashboard
 {
     using System;
+    using System.Collections.Generic;
     using System.Data;
+    using System.Drawing;
     using System.Globalization;
     using System.IO;
     using System.Web.Hosting;
@@ -22,6 +24,7 @@ namespace Engage.Dnn.Dashboard
     using DotNetNuke.Services.Localization;
     using DotNetNuke.Services.Packages;
     using Telerik.Charting;
+    using Telerik.Charting.Styles;
     using Telerik.Web.UI;
 
     /// <summary>
@@ -29,6 +32,11 @@ namespace Engage.Dnn.Dashboard
     /// </summary>
     public partial class Home : ModuleBase
     {
+        /// <summary>
+        /// A <see cref="IDictionary{TKey,TValue}"/> which maps between the CSS class for an Event Log type, and the color for that CSS class and type.
+        /// </summary>
+        private static readonly IDictionary<string, Color> eventLogTypeColors = FillEventLogTypeColorDictionary();
+
         /// <summary>
         /// Raises the <see cref="E:System.Web.UI.Control.Init"/> event.
         /// </summary>
@@ -38,6 +46,39 @@ namespace Engage.Dnn.Dashboard
             base.OnInit(e);
             this.Load += this.Page_Load;
             this.InstallChartingButton.Click += this.InstallChartingButton_Click;
+        }
+
+        /// <summary>
+        /// Fills <see cref="eventLogTypeColors"/>.
+        /// </summary>
+        /// <remarks>
+        /// Based on <c>~/DesktopModules/Admin/LogViewer/logviewer.css</c>
+        /// </remarks>
+        /// <returns>A dictionary for <see cref="eventLogTypeColors"/></returns>
+        private static IDictionary<string, Color> FillEventLogTypeColorDictionary()
+        {
+            IDictionary<string, Color> eventLogTypeColorDictionary = new Dictionary<string, Color>(9);
+            eventLogTypeColorDictionary.Add("Exception", Color.FromArgb(0xff, 0x14, 0x14));
+            eventLogTypeColorDictionary.Add("ItemCreated", Color.FromArgb(0x00, 0x99, 0x00));
+            eventLogTypeColorDictionary.Add("ItemUpdated", Color.FromArgb(0x00, 0x99, 0x99));
+            eventLogTypeColorDictionary.Add("ItemDeleted", Color.FromArgb(0x14, 0xff, 0xff));
+            eventLogTypeColorDictionary.Add("OperationSuccess", Color.FromArgb(0x99, 0x99, 0x00));
+            eventLogTypeColorDictionary.Add("OperationFailure", Color.FromArgb(0x99, 0x00, 0x00));
+            eventLogTypeColorDictionary.Add("GeneralAdminOperation", Color.FromArgb(0x4d, 0x00, 0x99));
+            eventLogTypeColorDictionary.Add("AdminAlert", Color.FromArgb(0x14, 0x8a, 0xff));
+            eventLogTypeColorDictionary.Add("HostAlert", Color.FromArgb(0xff, 0x8a, 0x14));
+            eventLogTypeColorDictionary.Add("SecurityException", Color.FromArgb(0x00, 0x00, 0x00));
+            return eventLogTypeColorDictionary;
+        }
+
+        /// <summary>
+        /// Gets the color of the given event log type, based on that type's associated CSS class.
+        /// </summary>
+        /// <param name="typeCssClass">The event log type's CSS class.</param>
+        /// <returns>The color of the event log type</returns>
+        private static Color GetEventLogTypeColor(string typeCssClass)
+        {
+            return eventLogTypeColors.ContainsKey(typeCssClass) ? eventLogTypeColors[typeCssClass] : Color.Empty;
         }
 
         /// <summary>
@@ -77,8 +118,8 @@ namespace Engage.Dnn.Dashboard
         /// </summary>
         private void SetupAboutLinks()
         {
-            this.ChartingSupportLink.Text = Localization.GetString("What's This.Text", DashboardResourceFile);
-            this.ChartingSupportLink.Attributes.Add("OnClick", GetToggleBehavior("InstallChartingPanel"));
+            this.ChartingSupportLink.Text = Localization.GetString("Learn More.Text", DashboardResourceFile);
+            this.ChartingSupportLink.Attributes.Add("OnClick", GetToggleBehavior("InstallChartingPanel", LearnMore, LearnLess));
         }
 
         /// <summary>
@@ -86,67 +127,124 @@ namespace Engage.Dnn.Dashboard
         /// </summary>
         private void FillData()
         {
-            this.SetupDashboardGauges();
             this.SetupCharting();
         }
 
         /// <summary>
-        /// Sets up the Dundas Gauge that visualizes the percentage of pages which lack a keyword or a description
-        /// and the percentage of overall database size accounted for by the log file.
-        /// </summary>
-        private void SetupDashboardGauges()
-        {
-            double databaseSize;
-            double logSize;
-
-            this.DashboardGaugeContainer.ImageUrl = ApplicationUrl + DesktopModuleFolderName + "DashboardGuageTempFiles";
-
-            this.DashboardGaugeContainer.CircularGauges["PagesGauge"].Scales[0].Minimum = 0;
-            this.DashboardGaugeContainer.CircularGauges["PagesGauge"].Scales[0].Maximum = 100;
-            this.DashboardGaugeContainer.CircularGauges["PagesGauge"].Scales[0].Interval = 10;
-
-            this.DashboardGaugeContainer.CircularGauges["DatabaseGauge"].Scales[0].Minimum = 0;
-            this.DashboardGaugeContainer.CircularGauges["DatabaseGauge"].Scales[0].Maximum = 100;
-            this.DashboardGaugeContainer.CircularGauges["DatabaseGauge"].Scales[0].Interval = 10;
-
-            this.DashboardGaugeContainer.CircularGauges["PagesGauge"].Pointers[0].Value = 
-                (DataProvider.Instance().CountPagesWithoutDescriptionOrKeywords(this.PortalId) /
-                 (double)DataProvider.Instance().CountPages(this.PortalId)) * 100;
-            
-            // todo: make getting the size of the database and the log safer!
-            if (Double.TryParse(DataProvider.Instance().GetSizeOfDatabase().Replace(" KB", string.Empty), out databaseSize) 
-                && Double.TryParse(DataProvider.Instance().GetDatabaseLogSize().Replace(" KB", string.Empty), out logSize))
-            {
-                this.DashboardGaugeContainer.CircularGauges["DatabaseGauge"].Pointers[0].Value = (logSize / databaseSize) * 100;
-            }
-        }
-
-        /// <summary>
-        /// Sets up the Telerik <see cref="RadChart"/>'s on the page.  Installs charting support into the web.config if necessary. 
+        /// Sets up the Telerik <see cref="RadChart"/>s on the page.  Installs charting support into the web.config if necessary. 
         /// </summary>
         private void SetupCharting()
         {
             if (this.ChartingIsInstalled())
             {
-                DateTime startDate = DateTime.Today.AddMonths(-1);
-                DateTime endDate = DateTime.Today;
-
-                ChartSeries registrationSeries = new ChartSeries("User Registrations", ChartSeriesType.Area);
-                using (IDataReader registrationsReader = DataProvider.Instance().GetUserRegistrationsInDateSpan(startDate, endDate, this.PortalId))
-                {
-                    while (registrationsReader.Read())
-                    {
-                        registrationSeries.AddItem(new ChartSeriesItem(((DateTime)registrationsReader["Date"]).ToOADate(), (int)registrationsReader["Users Registered"]));
-                    }
-                }
-
-                this.UserRegistrationsChart.Series.Add(registrationSeries);
-                this.UserRegistrationsChart.PlotArea.XAxis.AddRange(startDate.ToOADate(), endDate.ToOADate(), 7);
+                this.FillDatabaseSizeChart();
+                this.FillSeoPagesChart();
+                this.FillEventLogChart();
             }
             else
             {
                 this.ChartsMultiview.SetActiveView(this.InstallChartingView);
             }
+        }
+
+        /// <summary>
+        /// Fills the database size chart.
+        /// </summary>
+        private void FillDatabaseSizeChart()
+        {
+            if (this.UserInfo.IsSuperUser)
+            {
+                this.DatabaseSizeChartPlaceholder.Visible = true;
+                this.DatabaseSizeChart.ChartTitle.TextBlock.Text = Localization.GetString("Database Size By Log and Data.Text", this.LocalResourceFile);
+
+                // TODO: make getting the size of the database and the log safer!
+                double databaseSize;
+                double logSize;
+                if (Double.TryParse(DataProvider.Instance().GetSizeOfDatabase().Replace(" KB", string.Empty), out databaseSize)
+                    && Double.TryParse(DataProvider.Instance().GetDatabaseLogSize().Replace(" KB", string.Empty), out logSize))
+                {
+                    this.DatabaseSizeChart.Series[0].Items.Add(this.GetPieChartSeriesItem(logSize, "DatabaseLogSize.Text"));
+                    this.DatabaseSizeChart.Series[0].Items.Add(this.GetPieChartSeriesItem(databaseSize, "DatabaseSize.Text"));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Fills the SEO pages chart.
+        /// </summary>
+        private void FillSeoPagesChart()
+        {
+            this.SeoPagesChartPlaceholder.Visible = true;
+            this.SeoPagesChart.ChartTitle.TextBlock.Text = Localization.GetString("Pages With and Without Keywords or Descriptions.Text", this.LocalResourceFile);
+
+            using (IDataReader seoPagesReader = DataProvider.Instance().CountPagesWithoutDescriptionOrKeywords(this.PortalId))
+            {
+                if (seoPagesReader.Read())
+                {
+                    int pagesWithoutSeoCount = (int)seoPagesReader[0];
+
+                    if (seoPagesReader.NextResult() && seoPagesReader.Read())
+                    {
+                        int totalPagesCount = (int)seoPagesReader[0];
+                        this.SeoPagesChart.Series[0].Items.Add(this.GetPieChartSeriesItem(pagesWithoutSeoCount, "PagesWithoutDescriptionOrKeywords.Text"));
+                        this.SeoPagesChart.Series[0].Items.Add(this.GetPieChartSeriesItem(totalPagesCount - pagesWithoutSeoCount, "PagesWithDescriptionAndKeywords.Text"));
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Fills the event log chart.
+        /// </summary>
+        private void FillEventLogChart()
+        {
+            this.EventLogChartPlaceholder.Visible = true;
+            this.EventLogChart.ChartTitle.TextBlock.Text = Localization.GetString("Event Log Entries by Type.Text", this.LocalResourceFile);
+            this.EventLogChart.PlotArea.EmptySeriesMessage.TextBlock.Text = Localization.GetString("EmptyEventLogMessage.Text", this.LocalResourceFile);
+
+            int? portalId = this.UserInfo.IsSuperUser ? (int?)null : this.PortalId;
+            using (IDataReader eventLogReader = DataProvider.Instance().GetEventLogSummaryByType(portalId))
+            {
+                while (eventLogReader.Read())
+                {
+                    string eventLogTypeCssClass = (string)eventLogReader["LogTypeCssClass"];
+                    ChartSeriesItem eventLogItem = this.GetPieChartSeriesItem((int)eventLogReader["Count"], eventLogTypeCssClass, GetEventLogTypeColor(eventLogTypeCssClass));
+                    this.EventLogChart.Series[0].Items.Add(eventLogItem);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Creates a <see cref="ChartSeriesItem"/> for a pie chart.
+        /// </summary>
+        /// <param name="value">The value of the pie slice.</param>
+        /// <param name="resourceKey">The resource key for the label text.</param>
+        /// <returns>A <see cref="ChartSeriesItem"/> for a pie chart with the given value and text</returns>
+        private ChartSeriesItem GetPieChartSeriesItem(double value, string resourceKey)
+        {
+            return this.GetPieChartSeriesItem(value, resourceKey, Color.Empty);
+        }
+
+        /// <summary>
+        /// Creates a <see cref="ChartSeriesItem"/> for a pie chart.
+        /// </summary>
+        /// <param name="value">The value of the pie slice.</param>
+        /// <param name="resourceKey">The resource key for the label text.</param>
+        /// <param name="fillColor">Color with which to fill the region.</param>
+        /// <returns>
+        /// A <see cref="ChartSeriesItem"/> for a pie chart with the given value and text
+        /// </returns>
+        private ChartSeriesItem GetPieChartSeriesItem(double value, string resourceKey, Color fillColor)
+        {
+            ChartSeriesItem chartSeriesItem = new ChartSeriesItem(value);
+            chartSeriesItem.Name = chartSeriesItem.ActiveRegion.Tooltip = Localization.GetString(resourceKey, this.LocalResourceFile);
+            if (fillColor != Color.Empty)
+            {
+                chartSeriesItem.Appearance.FillStyle.MainColor = fillColor;
+                chartSeriesItem.Appearance.FillStyle.FillType = FillType.Solid;
+            }
+
+            return chartSeriesItem;
         }
 
         /// <summary>

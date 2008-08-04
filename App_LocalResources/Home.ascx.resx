@@ -117,19 +117,79 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AdminAlert.Text" xml:space="preserve">
+    <value>Admin Alert</value>
+  </data>
   <data name="ChartsPanel.Text" xml:space="preserve">
     <value>Charts</value>
+  </data>
+  <data name="Database Size By Log and Data.Text" xml:space="preserve">
+    <value>Database Size By Log and Data</value>
+  </data>
+  <data name="DatabaseLogSize.Text" xml:space="preserve">
+    <value>Transaction Log</value>
+  </data>
+  <data name="DatabaseSize.Text" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="DisabledChart.Alt" xml:space="preserve">
+    <value>Disabled Chart Image</value>
+  </data>
+  <data name="EmptyEventLogMessage.Text" xml:space="preserve">
+    <value>The Event Log for this site does not have any entries</value>
+  </data>
+  <data name="Event Log Entries by Type.Text" xml:space="preserve">
+    <value>Event Log Entries by Type</value>
+  </data>
+  <data name="Exception.Text" xml:space="preserve">
+    <value>Exception</value>
+  </data>
+  <data name="GeneralAdminOperation.Text" xml:space="preserve">
+    <value>General Admin Operation</value>
+  </data>
+  <data name="HostAlert.Text" xml:space="preserve">
+    <value>Host Alert</value>
   </data>
   <data name="InstallChartingButton.Text" xml:space="preserve">
     <value>Install Charting Support</value>
   </data>
   <data name="InstallChartingSupport.Text" xml:space="preserve">
-    <value>&lt;p&gt;This module uses &lt;a href="http://www.telerik.com/products/aspnet-ajax/controls/chart/overview.aspx" target="_blank"&gt;Telerik's RadChart&lt;/a&gt; component to display informative charts of various statistics about your site.  This component needs to install an HTTP handler into your web.config.  When you click on the button above, the module will alter your web.config (using the same XmlMerge utility that the DNN code updates use).  This change will cause your site to restart (similar to installing a new module).&lt;/p&gt;
-&lt;p&gt;The installation will add the following line to your web.config's configuration/system.web/httpHandlers section for classic IIS pipeline support: &lt;span class="code"&gt;&amp;lt;add path="ChartImage.axd" verb="*" type="Telerik.Web.UI.ChartHttpHandler, Telerik.Web.UI, Culture=neutral, PublicKeyToken=121fae78165ba3d4" validate="false" /&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;The following line will be added to your web.config's configuration/system.webServer/handlers section for integrated pipeline support in IIS 7: &lt;span class="code"&gt;&amp;lt;add name="TelerikCharting" path="ChartImage.axd" verb="*" type="Telerik.Web.UI.ChartHttpHandler, Telerik.Web.UI, Culture=neutral, PublicKeyToken=121fae78165ba3d4" preCondition="integratedMode,runtimeVersionv2.0" /&gt;
+    <value>&lt;p&gt;When you click on the button below, the module will alter your web.config (using the same XmlMerge utility that the DNN core updates use).  This change will cause your site to restart (similar to installing a new module).&lt;/p&gt;
+&lt;p&gt;The installation will add the following line to your web.config's &lt;span class="code"&gt;configuration/system.web/httpHandlers&lt;/span&gt; section for classic IIS pipeline support: &lt;span class="code"&gt;&amp;lt;add path="ChartImage.axd" verb="*" type="Telerik.Web.UI.ChartHttpHandler, Telerik.Web.UI, Culture=neutral, PublicKeyToken=121fae78165ba3d4" validate="false" /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The following line will also be added to your web.config's &lt;span class="code"&gt;configuration/system.webServer/handlers&lt;/span&gt; section for integrated pipeline support in IIS 7: &lt;span class="code"&gt;&amp;lt;add name="TelerikCharting" path="ChartImage.axd" verb="*" type="Telerik.Web.UI.ChartHttpHandler, Telerik.Web.UI, Culture=neutral, PublicKeyToken=121fae78165ba3d4" preCondition="integratedMode,runtimeVersionv2.0" /&gt;
 &lt;/span&gt;&lt;/p&gt;</value>
   </data>
   <data name="InstallChartingSupport.Title" xml:space="preserve">
     <value>Install Charting Support</value>
+  </data>
+  <data name="InstallChartingSupportIntro.Text" xml:space="preserve">
+    <value>This module uses &lt;a href="http://www.telerik.com/products/aspnet-ajax/controls/chart/overview.aspx" target="_blank"&gt;Telerik's RadChart&lt;/a&gt; component to display informative charts of various statistics about your site.  This component needs to install an HTTP handler into your web.config. Click to</value>
+  </data>
+  <data name="ItemCreated.Text" xml:space="preserve">
+    <value>Item Created</value>
+  </data>
+  <data name="ItemDeleted.Text" xml:space="preserve">
+    <value>Item Deleted</value>
+  </data>
+  <data name="ItemUpdated.Text" xml:space="preserve">
+    <value>Item Updated</value>
+  </data>
+  <data name="OperationFailure.Text" xml:space="preserve">
+    <value>Operation Failure</value>
+  </data>
+  <data name="OperationSuccess.Text" xml:space="preserve">
+    <value>Operation Success</value>
+  </data>
+  <data name="Pages With and Without Keywords or Descriptions.Text" xml:space="preserve">
+    <value>Pages With and Without Keywords or Descriptions</value>
+  </data>
+  <data name="PagesWithDescriptionAndKeywords.Text" xml:space="preserve">
+    <value>Pages with Description and Keywords</value>
+  </data>
+  <data name="PagesWithoutDescriptionOrKeywords.Text" xml:space="preserve">
+    <value>Pages Lacking either Description or Keywords</value>
+  </data>
+  <data name="SecurityException.Text" xml:space="preserve">
+    <value>Security Exception</value>
   </data>
 </root>

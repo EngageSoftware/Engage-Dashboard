@@ -67,7 +67,7 @@ namespace Engage.Dnn.Dashboard
                 }
             }
 
-            if (Engage.Utility.HasValue(keyParam) && Enum.IsDefined(typeof(ControlKey), keyParam))
+            if (Engage.Utility.HasValue(keyParam) && Enum.IsDefined(typeof(ControlKey), keyParam) && (this.UserInfo.IsSuperUser || (ControlKey)Enum.Parse(typeof(ControlKey), keyParam) != ControlKey.Host))
             {
                 return keyParam + ".ascx";
             }

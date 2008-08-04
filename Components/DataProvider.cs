@@ -47,7 +47,7 @@ namespace Engage.Dnn.Dashboard
         /// </summary>
         /// <param name="portalId">The portal id.</param>
         /// <returns>A count of pages without a description or keywords.</returns>
-        public abstract int CountPagesWithoutDescriptionOrKeywords(int portalId);
+        public abstract IDataReader CountPagesWithoutDescriptionOrKeywords(int portalId);
 
         /// <summary>
         /// Gets the number of deleted module and pages in the recycle bin fir the given portal.
@@ -247,5 +247,12 @@ namespace Engage.Dnn.Dashboard
         /// </summary>
         /// <returns><c>true</c> if the database supports SQL Server 2005 functionality; otherwise, <c>false</c></returns>
         public abstract bool SupportsSql2005Functionality();
+
+        /// <summary>
+        /// Gets a summary of the event log by log entry type.
+        /// </summary>
+        /// <param name="portalId">The portal id.</param>
+        /// <returns>A summary of the event log by log entry type</returns>
+        public abstract IDataReader GetEventLogSummaryByType(int? portalId);
     }
 }

@@ -14,15 +14,6 @@ namespace Engage.Dnn.Dashboard {
     public partial class Home {
         
         /// <summary>
-        /// DashboardGaugeContainer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Dundas.Gauges.WebControl.GaugeContainer DashboardGaugeContainer;
-        
-        /// <summary>
         /// ChartsMultiview control.
         /// </summary>
         /// <remarks>
@@ -41,13 +32,58 @@ namespace Engage.Dnn.Dashboard {
         protected global::System.Web.UI.WebControls.View ChartsView;
         
         /// <summary>
-        /// UserRegistrationsChart control.
+        /// DatabaseSizeChartPlaceholder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadChart UserRegistrationsChart;
+        protected global::System.Web.UI.WebControls.PlaceHolder DatabaseSizeChartPlaceholder;
+        
+        /// <summary>
+        /// DatabaseSizeChart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadChart DatabaseSizeChart;
+        
+        /// <summary>
+        /// SeoPagesChartPlaceholder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder SeoPagesChartPlaceholder;
+        
+        /// <summary>
+        /// SeoPagesChart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadChart SeoPagesChart;
+        
+        /// <summary>
+        /// EventLogChartPlaceholder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder EventLogChartPlaceholder;
+        
+        /// <summary>
+        /// EventLogChart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadChart EventLogChart;
         
         /// <summary>
         /// InstallChartingView control.

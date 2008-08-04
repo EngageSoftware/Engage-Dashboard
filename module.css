@@ -58,6 +58,11 @@
 {
 	text-align:center;
 }
+.installMessage
+{
+	float:left;
+	width:60%;
+}
 		
 /*========================================================
 

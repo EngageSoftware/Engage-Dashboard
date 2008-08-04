@@ -133,7 +133,7 @@ namespace Engage.Dnn.Dashboard
         }
 
         /// <summary>
-        /// Gets the number of pages in the given portal.
+        /// Gets the number of pages in the given portal.  Counts only pages that aren't deleted or admin pages.
         /// </summary>
         /// <param name="portalId">The portal id.</param>
         /// <returns>The number of pages in the given portal</returns>
@@ -159,24 +159,25 @@ namespace Engage.Dnn.Dashboard
         }
 
         /// <summary>
-        /// Gets a count of the pages that don't have a description defined.
+        /// Gets a count of the pages that don't have either a description or keywords defined.
         /// </summary>
         /// <param name="portalId">The portal id.</param>
-        /// <returns>A count of the pages that don't have a description defined</returns>
-        public override int CountPagesWithoutDescriptionOrKeywords(int portalId)
+        /// <returns>A count of the pages that don't have a description or keywords defined</returns>
+        public override IDataReader CountPagesWithoutDescriptionOrKeywords(int portalId)
         {
             StringBuilder sql = new StringBuilder(128);
             sql.Append("DECLARE @AdminTabID int ");
             sql.AppendFormat("SET @AdminTabID = (SELECT t.TabID FROM {0}Tabs t WHERE t.TabName = 'Admin' AND t.ParentID IS NULL AND t.Level = 0 AND t.PortalID = @portalId) ", this.DnnPrefix);
 
-            sql.Append("SELECT count(*)");
+            sql.Append("SELECT COUNT(*)");
             sql.AppendFormat("FROM {0}Tabs t ", this.DnnPrefix);
             sql.Append("WHERE t.PortalID = @portalId ");
             sql.Append("	AND (t.ParentId <> @AdminTabID OR t.ParentId IS NULL) ");
             sql.Append("	AND t.TabName <> 'Admin' ");
             sql.Append("	AND (t.Description = '' or t.Keywords = '')");
+            sql.AppendFormat("{0} SELECT COUNT(*) FROM {1}Tabs", Environment.NewLine, this.DnnPrefix);
 
-            return (int)SqlHelper.ExecuteScalar(
+            return SqlHelper.ExecuteReader(
                 this.ConnectionString,
                 CommandType.Text,
                 sql.ToString(),
@@ -805,6 +806,30 @@ namespace Engage.Dnn.Dashboard
                 Utility.CreateTextParam("@DesktopHtml", desktopHtml), 
                 Utility.CreateTextParam("@DesktopSummary", desktopSummary), 
                 Utility.CreateIntegerParam("@UserID", userId));
+        }
+
+        /// <summary>
+        /// Gets a summary of the event log by log entry type.
+        /// </summary>
+        /// <param name="portalId">The portal id.</param>
+        /// <returns>
+        /// A summary of the event log by log entry type
+        /// </returns>
+        public override IDataReader GetEventLogSummaryByType(int? portalId)
+        {
+            StringBuilder sql = new StringBuilder(256);
+            sql.Append("SELECT COUNT(*) AS Count, elt.LogTypeCssClass ");
+            sql.AppendFormat("FROM {0}EventLog el ", this.DnnPrefix);
+            sql.AppendFormat(" INNER JOIN {0}EventLogTypes elt ON (el.LogTypeKey = elt.LogTypeKey) ", this.DnnPrefix);
+            sql.Append("WHERE el.LogPortalId = @portalId OR @portalId IS NULL ");
+            sql.Append("GROUP BY elt.LogTypeCssClass ");
+            sql.Append("ORDER BY LogTypeCssClass ");
+
+            return SqlHelper.ExecuteReader(
+                this.ConnectionString, 
+                CommandType.Text, 
+                sql.ToString(),
+                Utility.CreateIntegerParam("@portalId", portalId));
         }
 
         /// <summary>

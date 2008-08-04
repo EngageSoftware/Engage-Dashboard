@@ -61,6 +61,16 @@ namespace Engage.Dnn.Dashboard
         protected const string HideDetails = "hideDetails";
 
         /// <summary>
+        /// Name of JavaScript variable registered by <see cref="RegisterScripts"/> which holds the text to display when the Install Charting Support text is hidden.
+        /// </summary>
+        protected const string LearnMore = "learnMore";
+
+        /// <summary>
+        /// Name of JavaScript variable registered by <see cref="RegisterScripts"/> which holds the text to display when the Install Charting Support text is shown.
+        /// </summary>
+        protected const string LearnLess = "learnLess";
+
+        /// <summary>
         /// Path to the folder that contains JavaScript in this module
         /// </summary>
         private const string JavaScriptResourcePath = "Engage.Dnn.Dashboard.JavaScript.";
@@ -272,6 +282,8 @@ namespace Engage.Dnn.Dashboard
             this.Page.ClientScript.RegisterHiddenField(HideDetails, Localization.GetString("Hide DetailsLink.Text", DashboardResourceFile));
             this.Page.ClientScript.RegisterHiddenField(ShowDateRange, Localization.GetString("DateRangeLink.Text", DashboardResourceFile));
             this.Page.ClientScript.RegisterHiddenField(HideDateRange, Localization.GetString("Hide DateRangeLink.Text", DashboardResourceFile));
+            this.Page.ClientScript.RegisterHiddenField(LearnMore, Localization.GetString("Learn More.Text", DashboardResourceFile));
+            this.Page.ClientScript.RegisterHiddenField(LearnLess, Localization.GetString("Learn Less.Text", DashboardResourceFile));
         }
     }
 }
