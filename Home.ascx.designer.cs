@@ -32,13 +32,13 @@ namespace Engage.Dnn.Dashboard {
         protected global::System.Web.UI.WebControls.View ChartsView;
         
         /// <summary>
-        /// DatabaseSizeChartPlaceholder control.
+        /// databaseSizeChartPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder DatabaseSizeChartPlaceholder;
+        protected global::System.Web.UI.WebControls.Panel databaseSizeChartPanel;
         
         /// <summary>
         /// DatabaseSizeChart control.
@@ -50,13 +50,13 @@ namespace Engage.Dnn.Dashboard {
         protected global::Telerik.Web.UI.RadChart DatabaseSizeChart;
         
         /// <summary>
-        /// SeoPagesChartPlaceholder control.
+        /// seoPagesChartPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder SeoPagesChartPlaceholder;
+        protected global::System.Web.UI.WebControls.Panel seoPagesChartPanel;
         
         /// <summary>
         /// SeoPagesChart control.
@@ -68,13 +68,13 @@ namespace Engage.Dnn.Dashboard {
         protected global::Telerik.Web.UI.RadChart SeoPagesChart;
         
         /// <summary>
-        /// EventLogChartPlaceholder control.
+        /// eventLogChartPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder EventLogChartPlaceholder;
+        protected global::System.Web.UI.WebControls.Panel eventLogChartPanel;
         
         /// <summary>
         /// EventLogChart control.

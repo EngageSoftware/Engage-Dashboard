@@ -132,6 +132,9 @@
   <data name="DatabaseSize.Text" xml:space="preserve">
     <value>Data</value>
   </data>
+  <data name="DatabaseSizeChart.Text" xml:space="preserve">
+    <value>If you are concerned the size of your database, one common method of reducing your database's size is to shrink the transaction log when it gets to be too large in comparison with the actual data.  You can shrink a database in SQL Management Studio.</value>
+  </data>
   <data name="DisabledChart.Alt" xml:space="preserve">
     <value>Disabled Chart Image</value>
   </data>
@@ -140,6 +143,9 @@
   </data>
   <data name="Event Log Entries by Type.Text" xml:space="preserve">
     <value>Event Log Entries by Type</value>
+  </data>
+  <data name="EventLogChart.Text" xml:space="preserve">
+    <value>You can keep track of the sorts of events are occurring most often on your website through this chart.</value>
   </data>
   <data name="Exception.Text" xml:space="preserve">
     <value>Exception</value>
@@ -191,5 +197,8 @@
   </data>
   <data name="SecurityException.Text" xml:space="preserve">
     <value>Security Exception</value>
+  </data>
+  <data name="SeoPagesChart.Text" xml:space="preserve">
+    <value>If you are concerned about your website's visiblity to search engines, make sure that all of your pages have a description and keywords set.</value>
   </data>
 </root>

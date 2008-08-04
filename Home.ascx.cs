@@ -154,7 +154,7 @@ namespace Engage.Dnn.Dashboard
         {
             if (this.UserInfo.IsSuperUser)
             {
-                this.DatabaseSizeChartPlaceholder.Visible = true;
+                this.databaseSizeChartPanel.Visible = true;
                 this.DatabaseSizeChart.ChartTitle.TextBlock.Text = Localization.GetString("Database Size By Log and Data.Text", this.LocalResourceFile);
 
                 // TODO: make getting the size of the database and the log safer!
@@ -174,7 +174,6 @@ namespace Engage.Dnn.Dashboard
         /// </summary>
         private void FillSeoPagesChart()
         {
-            this.SeoPagesChartPlaceholder.Visible = true;
             this.SeoPagesChart.ChartTitle.TextBlock.Text = Localization.GetString("Pages With and Without Keywords or Descriptions.Text", this.LocalResourceFile);
 
             using (IDataReader seoPagesReader = DataProvider.Instance().CountPagesWithoutDescriptionOrKeywords(this.PortalId))
@@ -198,7 +197,6 @@ namespace Engage.Dnn.Dashboard
         /// </summary>
         private void FillEventLogChart()
         {
-            this.EventLogChartPlaceholder.Visible = true;
             this.EventLogChart.ChartTitle.TextBlock.Text = Localization.GetString("Event Log Entries by Type.Text", this.LocalResourceFile);
             this.EventLogChart.PlotArea.EmptySeriesMessage.TextBlock.Text = Localization.GetString("EmptyEventLogMessage.Text", this.LocalResourceFile);
 

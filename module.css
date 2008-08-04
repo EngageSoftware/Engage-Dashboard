@@ -63,6 +63,19 @@
 	float:left;
 	width:60%;
 }
+.chartWrapper
+{
+	clear:both;
+}
+.chartWrapper .RadChart
+{
+	float:left;
+	width:59%;
+}
+.chartWrapper .InformationBody .InformationIcon
+{
+	background-image:none;
+}
 		
 /*========================================================
 
