@@ -175,7 +175,6 @@
         <include name="${dnn.utility.dll}" />
         <include name="../../bin/Telerik.Web.UI.dll" />
         <include name="../../bin/Telerik.Charting.dll" />
-        <include name="../../bin/DundasWebGauge.dll" />
         <include name="**/*.sqldataprovider" />
         <include name="**/*.dnn" />
         <include name="**/licenses/EULA-Standard.txt" />
@@ -203,7 +202,6 @@
         <include name="${dnn.utility.dll}" />
         <include name="../../bin/Telerik.Web.UI.dll" />
         <include name="../../bin/Telerik.Charting.dll" />
-        <include name="../../bin/DundasWebGauge.dll" />
         <include name="**/*.sqldataprovider" />
         <include name="**/*.dnn" />
         <include name="**/licenses/EULA-Professional.txt" />
@@ -231,7 +229,6 @@
         <include name="${dnn.utility.dll}" />
         <include name="../../bin/Telerik.Web.UI.dll" />
         <include name="../../bin/Telerik.Charting.dll" />
-        <include name="../../bin/DundasWebGauge.dll" />
         <include name="**/*.sqldataprovider" />
         <include name="**/*.dnn" />
         <include name="**/licenses/EULA-Enterprise.txt" />
@@ -261,7 +258,6 @@
         <include name="${dnn.utility.dll}" />
         <include name="../../bin/Telerik.Web.UI.dll" />
         <include name="../../bin/Telerik.Charting.dll" />
-        <include name="../../bin/DundasWebGauge.dll" />
         <include name="**/*.sqldataprovider" />
         <include name="**/*.dnn" />
         <include name="**/licenses/EULA-Enterprise.txt" />

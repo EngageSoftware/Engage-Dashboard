@@ -39,6 +39,9 @@
         <file>
           <name>Telerik.Web.UI.dll</name>
         </file>
+        <file>
+          <name>Telerik.Charting.dll</name>
+        </file>
       </files>
 		</folder>
 	</folders>
