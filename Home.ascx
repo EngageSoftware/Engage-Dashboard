@@ -7,36 +7,54 @@
 <asp:MultiView ID="ChartsMultiview" runat="server" ActiveViewIndex="0" EnableViewState="false">
     <asp:View ID="ChartsView" runat="server">
         <asp:Panel ID="databaseSizeChartPanel" runat="server" CssClass="chartWrapper" Visible="false">
-            <telerik:RadChart ID="DatabaseSizeChart" runat="server" IntelligentLabelsEnabled="True" EnableHandlerDetection="False" TempImagesFolder="~/DesktopModules/EngageDashboard/ChartsTemp" AutoLayout="True" AutoTextWrap="True">
-                <Series>
-                    <telerik:ChartSeries Type="Pie" DefaultLabelValue="#%" Appearance-LegendDisplayMode="ItemLabels"/>
-                </Series>
-            </telerik:RadChart>
-            <engage:ModuleMessage runat="server" MessageType="Information" CssClass="chartText" ResourceKey="DatabaseSizeChart.Text" />
+            <fieldset>
+                <legend class="SubHead">
+                    <asp:Label runat="server" ResourceKey="Database Size.Title" /> <asp:HyperLink runat="server" ID="AboutDatabaseSizeLink" NavigateUrl="javascript:void(0);" CssClass="CommandButton" />
+                </legend>
+
+                <telerik:RadChart ID="DatabaseSizeChart" runat="server" IntelligentLabelsEnabled="True" EnableHandlerDetection="False" TempImagesFolder="~/DesktopModules/EngageDashboard/ChartsTemp" AutoLayout="True" AutoTextWrap="True">
+                    <Series>
+                        <telerik:ChartSeries Type="Pie" DefaultLabelValue="#%" Appearance-LegendDisplayMode="ItemLabels"/>
+                    </Series>
+                </telerik:RadChart>
+                <engage:ModuleMessage ID="AboutDatabaseSizeMessage" runat="server" MessageType="Information" CssClass="chartText" ResourceKey="DatabaseSizeChart.Text" style="display:none" />
+            </fieldset>
         </asp:Panel>
-        <asp:Panel ID="seoPagesChartPanel" runat="server" CssClass="chartWrapper">
-            <telerik:RadChart ID="SeoPagesChart" runat="server" IntelligentLabelsEnabled="True" EnableHandlerDetection="False" TempImagesFolder="~/DesktopModules/EngageDashboard/ChartsTemp" AutoLayout="True" AutoTextWrap="True">
-                <Series>
-                    <telerik:ChartSeries Type="Pie" DefaultLabelValue="#%" Appearance-LegendDisplayMode="ItemLabels"/>
-                </Series>
-            </telerik:RadChart>
-            <engage:ModuleMessage runat="server" MessageType="Information" CssClass="chartText" ResourceKey="SeoPagesChart.Text" />
-        </asp:Panel>
-        <asp:Panel ID="eventLogChartPanel" runat="server" CssClass="chartWrapper">
-            <telerik:RadChart ID="EventLogChart" runat="server" IntelligentLabelsEnabled="True" EnableHandlerDetection="False" TempImagesFolder="~/DesktopModules/EngageDashboard/ChartsTemp" AutoLayout="True" AutoTextWrap="True">
-                <Series>
-                    <telerik:ChartSeries Type="Pie" DefaultLabelValue="#%" Appearance-LegendDisplayMode="ItemLabels"/>
-                </Series>
-            </telerik:RadChart>
-            <engage:ModuleMessage runat="server" MessageType="Information" CssClass="chartText" ResourceKey="EventLogChart.Text" />
-        </asp:Panel>
+        <div class="chartWrapper">
+            <fieldset>
+                <legend class="SubHead">
+                    <asp:Label runat="server" ResourceKey="Seo Pages.Title" /> <asp:HyperLink runat="server" ID="AboutSeoPagesLink" NavigateUrl="javascript:void(0);" CssClass="CommandButton" />
+                </legend>
+                
+                <telerik:RadChart ID="SeoPagesChart" runat="server" IntelligentLabelsEnabled="True" EnableHandlerDetection="False" TempImagesFolder="~/DesktopModules/EngageDashboard/ChartsTemp" AutoLayout="True" AutoTextWrap="True">
+                    <Series>
+                        <telerik:ChartSeries Type="Pie" DefaultLabelValue="#%" Appearance-LegendDisplayMode="ItemLabels"/>
+                    </Series>
+                </telerik:RadChart>
+                <engage:ModuleMessage ID="AboutSeoPagesMessage" runat="server" MessageType="Information" CssClass="chartText" ResourceKey="SeoPagesChart.Text" style="display:none" />
+            </fieldset>
+        </div>
+        <div class="chartWrapper">
+            <fieldset>
+                <legend class="SubHead">
+                    <asp:Label runat="server" ResourceKey="Event Log.Title" /> <asp:HyperLink runat="server" ID="AboutEventLogLink" NavigateUrl="javascript:void(0);" CssClass="CommandButton" />
+                </legend>
+
+                <telerik:RadChart ID="EventLogChart" runat="server" IntelligentLabelsEnabled="True" EnableHandlerDetection="False" TempImagesFolder="~/DesktopModules/EngageDashboard/ChartsTemp" AutoLayout="True" AutoTextWrap="True">
+                    <Series>
+                        <telerik:ChartSeries Type="Pie" DefaultLabelValue="#%" Appearance-LegendDisplayMode="ItemLabels"/>
+                    </Series>
+                </telerik:RadChart>
+                <engage:ModuleMessage ID="AboutEventLogMessage" runat="server" MessageType="Information" CssClass="chartText" ResourceKey="EventLogChart.Text" style="display:none" />
+            </fieldset>
+        </div>
     </asp:View>
     <asp:View ID="InstallChartingView" runat="server">
         <fieldset>
             <legend class="SubHead"><asp:Label runat="server" ResourceKey="InstallChartingSupport.Title" /></legend>
             <div style="clear:both;">
                 <div class="installMessage">
-                    <asp:Label runat="server" ResourceKey="InstallChartingSupportIntro.Text" /> <asp:HyperLink runat="server" ID="ChartingSupportLink" NavigateUrl="javascript:void(0);" CssClass="CommandButton" />
+                    <asp:Label runat="server" ResourceKey="InstallChartingSupportIntro.Text" CssClass="Normal" /> <asp:HyperLink runat="server" ID="ChartingSupportLink" NavigateUrl="javascript:void(0);" CssClass="CommandButton" />
                 </div>
                 <img src='<%=ResolveUrl("Images/disabledChart.png") %>' alt='<%=Localization.GetString("DisabledChart.Alt", this.LocalResourceFile) %>' />
             </div>

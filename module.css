@@ -46,6 +46,10 @@
 	background-position:0 0; 
 	padding:0 0 0 12px;
 }
+.chartWrapper .RadChart
+{
+	margin: 0 auto;
+}
 .code
 {
 	font-family: Courier New, Monospace;
@@ -57,24 +61,6 @@
 #InstallChartingPanel
 {
 	text-align:center;
-}
-.installMessage
-{
-	float:left;
-	width:60%;
-}
-.chartWrapper
-{
-	clear:both;
-}
-.chartWrapper .RadChart
-{
-	float:left;
-	width:59%;
-}
-.chartWrapper .InformationBody .InformationIcon
-{
-	background-image:none;
 }
 		
 /*========================================================

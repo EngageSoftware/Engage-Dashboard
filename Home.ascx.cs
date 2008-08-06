@@ -119,7 +119,14 @@ namespace Engage.Dnn.Dashboard
         private void SetupAboutLinks()
         {
             this.ChartingSupportLink.Text = Localization.GetString("Learn More.Text", DashboardResourceFile);
+            this.AboutDatabaseSizeLink.Text = Localization.GetString("What's This.Text", DashboardResourceFile);
+            this.AboutSeoPagesLink.Text = Localization.GetString("What's This.Text", DashboardResourceFile);
+            this.AboutEventLogLink.Text = Localization.GetString("What's This.Text", DashboardResourceFile);
+
             this.ChartingSupportLink.Attributes.Add("OnClick", GetToggleBehavior("InstallChartingPanel", LearnMore, LearnLess));
+            this.AboutDatabaseSizeLink.Attributes.Add("OnClick", GetToggleBehavior(this.AboutDatabaseSizeMessage.ClientID));
+            this.AboutSeoPagesLink.Attributes.Add("OnClick", GetToggleBehavior(this.AboutSeoPagesMessage.ClientID));
+            this.AboutEventLogLink.Attributes.Add("OnClick", GetToggleBehavior(this.AboutEventLogMessage.ClientID));
         }
 
         /// <summary>
