@@ -133,7 +133,7 @@
     <value>None</value>
   </data>
   <data name="NumberInRecycleBinItem.Text" xml:space="preserve">
-    <value>Number of Pages/Modules in the Recycle Bin:</value>
+    <value>Number of Items in the Recycle Bin:</value>
   </data>
   <data name="NumberOfPagesInPortalItem.Text" xml:space="preserve">
     <value>Number of Pages in the Current Portal:</value>
