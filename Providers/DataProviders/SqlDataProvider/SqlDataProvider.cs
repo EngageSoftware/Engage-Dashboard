@@ -169,13 +169,20 @@ namespace Engage.Dnn.Dashboard
             sql.Append("DECLARE @AdminTabID int ");
             sql.AppendFormat("SET @AdminTabID = (SELECT t.TabID FROM {0}Tabs t WHERE t.TabName = 'Admin' AND t.ParentID IS NULL AND t.Level = 0 AND t.PortalID = @portalId) ", this.DnnPrefix);
 
-            sql.Append("SELECT COUNT(*)");
+            sql.Append("SELECT COUNT(*) ");
             sql.AppendFormat("FROM {0}Tabs t ", this.DnnPrefix);
             sql.Append("WHERE t.PortalID = @portalId ");
             sql.Append("	AND (t.ParentId <> @AdminTabID OR t.ParentId IS NULL) ");
             sql.Append("	AND t.TabName <> 'Admin' ");
-            sql.Append("	AND (t.Description = '' or t.Keywords = '')");
-            sql.AppendFormat("{0} SELECT COUNT(*) FROM {1}Tabs", Environment.NewLine, this.DnnPrefix);
+            sql.Append("	AND t.IsDeleted <> 1 ");
+            sql.Append("	AND (t.Description = '' or t.Keywords = '') ");
+            sql.Append(Environment.NewLine);
+            sql.Append("SELECT COUNT(*) ");
+            sql.AppendFormat("FROM {0}Tabs t ", this.DnnPrefix);
+            sql.Append("WHERE t.PortalID = @portalId ");
+            sql.Append("	AND (t.ParentId <> @AdminTabID OR t.ParentId IS NULL) ");
+            sql.Append("    AND t.TabName <> 'Admin' ");
+            sql.Append("	AND t.IsDeleted <> 1 ");
 
             return SqlHelper.ExecuteReader(
                 this.ConnectionString,
@@ -567,6 +574,7 @@ namespace Engage.Dnn.Dashboard
             sql.Append("WHERE t.PortalID = @portalId ");
             sql.Append("	AND (t.ParentId <> @AdminTabID OR t.ParentId IS NULL) ");
             sql.Append("	AND t.TabName <> 'Admin' ");
+            sql.Append("	AND t.IsDeleted <> 1");
             sql.Append("	AND t.Description = '' ");
 
             return SqlHelper.ExecuteReader(
@@ -592,6 +600,7 @@ namespace Engage.Dnn.Dashboard
             sql.Append("WHERE t.PortalID = @portalId");
             sql.Append("	AND (t.ParentId <> @AdminTabID OR t.ParentId IS NULL) ");
             sql.Append("	AND t.TabName <> 'Admin' ");
+            sql.Append("	AND t.IsDeleted <> 1");
             sql.Append("	AND t.Keywords = ''");
 
             return SqlHelper.ExecuteReader(
