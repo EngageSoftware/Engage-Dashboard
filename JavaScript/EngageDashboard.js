@@ -8,5 +8,5 @@ function toggleElementVisibility(linkElement, elementId, showTextFieldId, hideTe
     else {
         linkElement.html(jQuery('#' + hideTextFieldId).val());
     }
-    element.toggle();
+    element.slideToggle('slow');
 }
