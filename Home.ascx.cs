@@ -245,8 +245,8 @@ namespace Engage.Dnn.Dashboard
             chartSeriesItem.Name = chartSeriesItem.ActiveRegion.Tooltip = Localization.GetString(resourceKey, this.LocalResourceFile);
             if (fillColor != Color.Empty)
             {
-                chartSeriesItem.Appearance.FillStyle.MainColor = fillColor;
-                chartSeriesItem.Appearance.FillStyle.FillType = FillType.Solid;
+                chartSeriesItem.Appearance.FillStyle.MainColor = Color.FromArgb(0xa0, fillColor);
+                chartSeriesItem.Appearance.FillStyle.SecondColor = fillColor;
             }
 
             return chartSeriesItem;

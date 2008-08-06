@@ -32,6 +32,60 @@ namespace Engage.Dnn.Dashboard {
         protected global::System.Web.UI.WebControls.View ChartsView;
         
         /// <summary>
+        /// AboutEventLogLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink AboutEventLogLink;
+        
+        /// <summary>
+        /// EventLogChart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadChart EventLogChart;
+        
+        /// <summary>
+        /// AboutEventLogMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Engage.Dnn.Dashboard.ModuleMessage AboutEventLogMessage;
+        
+        /// <summary>
+        /// AboutSeoPagesLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink AboutSeoPagesLink;
+        
+        /// <summary>
+        /// SeoPagesChart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadChart SeoPagesChart;
+        
+        /// <summary>
+        /// AboutSeoPagesMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Engage.Dnn.Dashboard.ModuleMessage AboutSeoPagesMessage;
+        
+        /// <summary>
         /// databaseSizeChartPanel control.
         /// </summary>
         /// <remarks>
@@ -66,60 +120,6 @@ namespace Engage.Dnn.Dashboard {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Engage.Dnn.Dashboard.ModuleMessage AboutDatabaseSizeMessage;
-        
-        /// <summary>
-        /// AboutSeoPagesLink control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink AboutSeoPagesLink;
-        
-        /// <summary>
-        /// SeoPagesChart control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Telerik.Web.UI.RadChart SeoPagesChart;
-        
-        /// <summary>
-        /// AboutSeoPagesMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Engage.Dnn.Dashboard.ModuleMessage AboutSeoPagesMessage;
-        
-        /// <summary>
-        /// AboutEventLogLink control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink AboutEventLogLink;
-        
-        /// <summary>
-        /// EventLogChart control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Telerik.Web.UI.RadChart EventLogChart;
-        
-        /// <summary>
-        /// AboutEventLogMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Engage.Dnn.Dashboard.ModuleMessage AboutEventLogMessage;
         
         /// <summary>
         /// InstallChartingView control.
