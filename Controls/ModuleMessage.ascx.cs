@@ -190,8 +190,8 @@ namespace Engage.Dnn.Dashboard
         /// <param name="control">The current control</param>
         /// <returns>Localized text for the given <paramref name="key"/></returns>
         /// <history>
-        /// [cnurse]	9/8/2004	Created
-        /// [bdukes]    6/13/2008   Adapted for new ModuleMessage control
+        /// [cnurse] 9/8/2004  Created
+        /// [bdukes] 6/13/2008 Adapted for new ModuleMessage control
         /// </history>
         protected static string GetLocalizedText(string key, Control control)
         {

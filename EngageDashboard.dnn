@@ -8,7 +8,7 @@
 			<description>
         An Dashboard module from Engage Software (www.engagemodules.com) which displays statistics and other helpful information about your DotNetNuke website.
       </description>
-			<version>01.00.00</version>
+			<version>01.00.01</version>
 			<businesscontrollerclass>Engage.Dnn.Dashboard.FeaturesController</businesscontrollerclass>
 			<dependencies>System.Web.UI.ScriptManager</dependencies>
 			<resourcefile>Resources.zip</resourcefile>
@@ -31,10 +31,16 @@
 					<name>EngageDashboard.dll</name>
 				</file>
         <file>
-          <name>Engage.Dnn.Utility.dll</name>
+          <name>Engage.Dnn.Framework.dll</name>
         </file>
         <file>
-          <name>Engage.Utilityv3.0.dll</name>
+          <name>Engage.Frameworkv3.0.dll</name>
+        </file>
+        <file>
+          <name>Engage.Dnn.Framework.XmlSerializers.dll</name>
+        </file>
+        <file>
+          <name>Engage.Frameworkv3.0.XmlSerializers.dll</name>
         </file>
         <file>
           <name>Telerik.Web.UI.dll</name>

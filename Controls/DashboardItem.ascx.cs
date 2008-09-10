@@ -129,7 +129,7 @@ namespace Engage.Dnn.Dashboard
         /// Gets or sets a value indicating whether this instance renders a date range.
         /// </summary>
         /// <value>
-        /// 	<c>true</c> if this instance renders a date range; otherwise, <c>false</c>.
+        /// <c>true</c> if this instance renders a date range; otherwise, <c>false</c>.
         /// </value>
         public bool HasDateRange
         {

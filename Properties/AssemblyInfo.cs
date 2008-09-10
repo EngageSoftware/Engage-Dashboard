@@ -37,8 +37,8 @@ using System.Web.UI;
 //      Minor Version 
 //      Build Number
 //      Revision
-[assembly: AssemblyVersion("1.0.0.*")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.0.1.*")]
+[assembly: AssemblyFileVersion("1.0.1.0")]
 
 [assembly: WebResource("Engage.Dnn.Dashboard.JavaScript.jquery-1.2.6.min.js", "text/javascript")]
 [assembly: WebResource("Engage.Dnn.Dashboard.JavaScript.EngageDashboard.js", "text/javascript")]
