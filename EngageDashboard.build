@@ -175,6 +175,7 @@
         <include name="**/*.sqldataprovider" />
         <include name="**/*.dnn" />
         <include name="**/licenses/EULA-Standard.txt" />
+        <exclude name="**/References/DotNetNuke.dll"/>
       </fileset>
     </copy>
 
@@ -199,6 +200,7 @@
         <include name="**/*.sqldataprovider" />
         <include name="**/*.dnn" />
         <include name="**/licenses/EULA-Professional.txt" />
+        <exclude name="**/References/DotNetNuke.dll"/>
       </fileset>
     </copy>
 
@@ -223,6 +225,7 @@
         <include name="**/*.sqldataprovider" />
         <include name="**/*.dnn" />
         <include name="**/licenses/EULA-Enterprise.txt" />
+        <exclude name="**/References/DotNetNuke.dll"/>
       </fileset>
     </copy>
 
@@ -249,6 +252,7 @@
         <include name="**/*.sqldataprovider" />
         <include name="**/*.dnn" />
         <include name="**/licenses/EULA-Enterprise.txt" />
+        <exclude name="**/References/DotNetNuke.dll"/>
       </fileset>
     </copy>
 
