@@ -283,6 +283,7 @@
     <Content Include="References\Engage.Dnn.Framework.XmlSerializers.dll" />
     <Content Include="References\Engage.Framework.dll" />
     <Content Include="References\Engage.Framework.XmlSerializers.dll" />
+    <Content Include="References\Microsoft.ApplicationBlocks.Data.dll" />
     <Content Include="References\Telerik.Charting.dll" />
     <Content Include="References\Telerik.Web.UI.dll" />
   </ItemGroup>
