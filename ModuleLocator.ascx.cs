@@ -133,7 +133,7 @@ namespace Engage.Dnn.Dashboard
                 this.DisplayModuleInfo(Convert.ToInt32(this.ModuleComboBox.SelectedValue, CultureInfo.InvariantCulture));
             }
 
-            this.ModuleTabsPanel.Visible = (this.ModuleComboBox.SelectedIndex > 0);
+            this.ModuleTabsPanel.Visible = this.ModuleComboBox.SelectedIndex > 0;
             this.ModuleMessageLabel.Visible = (this.ModuleTabsGrid.Rows.Count == 0) && (this.ModuleComboBox.SelectedIndex > 0);
         }
 
