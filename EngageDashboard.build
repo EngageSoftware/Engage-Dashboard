@@ -171,7 +171,7 @@
       <fileset>
         <include name="**${resourcezip.dir}/Resources.zip" />
         <include name="${module.dll}" />
-        <include name="**/References/*.dll" />
+        <include name="**/References}/**/*.dll" />
         <include name="**/*.sqldataprovider" />
         <include name="**/*.dnn" />
         <include name="**/licenses/EULA-Standard.txt" />
@@ -196,7 +196,7 @@
       <fileset>
         <include name="**${resourcezip.dir}/Resources.zip" />
         <include name="${module.dll}" />
-        <include name="**/References/*.dll" />
+        <include name="**/References}/**/*.dll" />
         <include name="**/*.sqldataprovider" />
         <include name="**/*.dnn" />
         <include name="**/licenses/EULA-Professional.txt" />
@@ -221,7 +221,7 @@
       <fileset>
         <include name="**${resourcezip.dir}/Resources.zip" />
         <include name="${module.dll}" />
-        <include name="**/References/*.dll" />
+        <include name="**/References}/**/*.dll" />
         <include name="**/*.sqldataprovider" />
         <include name="**/*.dnn" />
         <include name="**/licenses/EULA-Enterprise.txt" />
@@ -248,7 +248,7 @@
       <fileset>
         <include name="**${resourcezip.dir}/Resources.zip" />
         <include name="${module.dll}" />
-        <include name="**/References/*.dll" />
+        <include name="**/References}/**/*.dll" />
         <include name="**/*.sqldataprovider" />
         <include name="**/*.dnn" />
         <include name="**/licenses/EULA-Enterprise.txt" />
